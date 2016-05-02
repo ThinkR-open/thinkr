@@ -1,0 +1,14 @@
+Package: thinkr
+Type: Package
+Title: Some tools from ThinkR
+Version: 0.1
+Date: 2016-05-02
+Author: ThinkR
+Maintainer: vincent guyader <vincent@sthinkr.fr>
+Description: A lot of (uselfull) tools
+License: GNU 3.0
+LazyData: TRUE
+Depends:
+    dplyr,
+    lazyeval
+RoxygenNote: 5.0.1
