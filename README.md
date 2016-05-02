@@ -3,6 +3,7 @@
 the ublo function allow you to "have a look" inside a dplyr workflow 
 
 ```R
+library(thinkr)
 library(dplyr)
 data(iris)
 iris %>% ublo(head,summary) %>% plot
