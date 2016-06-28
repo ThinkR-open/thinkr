@@ -6,6 +6,6 @@
 \alias{thinkr-package}
 \title{thinkr}
 \description{
-a package with some (usefull) tools
+a package with some (useful) tools
 }
 

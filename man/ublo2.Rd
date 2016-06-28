@@ -19,9 +19,10 @@ allow to have a look inside the dplyr flow. see Example
 }
 \examples{
 data(iris)
-iris \%>\% ublo2(funs(head(.,n=2),summary(.,maxsum=2))) \%>\% plot
-iris \%>\% ublo2(funs(summary(.,maxsum=2))) \%>\% plot
-#iris \%>\% ublo2(funs_(dots=c("summary"))) \%>\% plot
-
+if( require(dplyr) ){
+  iris \%>\% ublo2(funs(head(.,n=2),summary(.,maxsum=2))) \%>\% plot
+  iris \%>\% ublo2(funs(summary(.,maxsum=2))) \%>\% plot
+  #iris \%>\% ublo2(funs_(dots=c("summary"))) \%>\% plot
+}
 }
 
