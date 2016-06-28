@@ -1,6 +1,6 @@
 #' thinkr
 #'
-#' a package with some (usefull) tools
+#' a package with some (useful) tools
 #'
 #'
 #'

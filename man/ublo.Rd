@@ -16,12 +16,13 @@ ublo(dataset, ...)
 the same dataset as input
 }
 \description{
-allow to have a look inside the dplyr flow. see Example
+allow to have a look inside the dplyr flow. see Example.
 }
 \examples{
 data(iris)
-iris \%>\% ublo(head,summary) \%>\% plot
-iris \%>\% ublo_("head","summary") \%>\% plot
-
+if( require(magrittr)){
+  iris \%>\% ublo(head,summary) \%>\% plot
+  iris \%>\% ublo_("head","summary") \%>\% plot
+}
 }
 
