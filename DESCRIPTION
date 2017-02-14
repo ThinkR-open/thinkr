@@ -9,5 +9,8 @@ Description: A lot of (useful) tools.
 License: GPL-3
 LazyData: TRUE
 Suggests: magrittr, dplyr
-Imports: lazyeval
+Imports: lazyeval,
+    ggplot2,
+    assertthat,
+    ReporteRs
 RoxygenNote: 5.0.1
