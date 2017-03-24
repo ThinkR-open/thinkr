@@ -24,7 +24,7 @@ test_that("conformit? data.frame", {
 
 test_that("caracteres accentu?s", {
     expect_equal(names(thinkr::clean_names(data.frame( `eeeeeaaai` = 3),verbose = FALSE)),"eeeeeaaai")
-    expect_equal(names(thinkr::clean_names(data.frame( `?????????` = 3),verbose = FALSE,translit = TRUE)),"eeeeeaaai")
+    expect_equal(names(thinkr::clean_names(data.frame( `éèëééäàãï` = 3),verbose = FALSE,translit = TRUE)),"eeeeeaaai")
 })
 
 
