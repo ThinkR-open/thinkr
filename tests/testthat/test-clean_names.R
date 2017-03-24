@@ -1,4 +1,4 @@
-context("test g?n?raux clean_names")
+context("test generaux clean_names")
 
 ## TODO: Rename context
 ## TODO: Add more tests
@@ -11,18 +11,18 @@ test_that("test global iris", {
 })
 
 
-test_that("conformit? data.frame", {
+test_that("conformite data.frame", {
   expect_equal(dim(iris), dim(clean_names(iris,verbose = FALSE)))
   iris_clean <- clean_names(iris,verbose = FALSE)
   names(iris)  <- names(iris_clean)<-NULL
   expect_equal(iris, iris_clean)
 })
-test_that("conformit? data.frame", {
+test_that("conformite data.frame", {
   expect_equal(names(clean_names(iris,verbose = FALSE))[3],"petal_length")
 })
 
 
-test_that("caracteres accentu?s", {
+test_that("caracteres accentues", {
     expect_equal(names(thinkr::clean_names(data.frame( `eeeeeaaai` = 3),verbose = FALSE)),"eeeeeaaai")
     expect_equal(names(thinkr::clean_names(data.frame( `éèëééäàãï` = 3),verbose = FALSE,translit = TRUE)),"eeeeeaaai")
 })
