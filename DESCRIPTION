@@ -1,0 +1,22 @@
+Package: thinkr
+Type: Package
+Title: ThinkR Toolbox
+Version: 0.1
+Date: 2016-05-02
+Author: ThinkR
+Maintainer: vincent guyader <vincent@thinkr.fr>
+Description: A lot of (useful) tools.
+License: GPL-3
+LazyData: TRUE
+Suggests: magrittr, dplyr,
+    testthat
+Imports: lazyeval,
+    ggplot2,
+    assertthat,
+    ReporteRs,
+    stringr,tidyr,
+    magrittr,
+    dplyr,
+    lubridate,
+    XLConnect
+RoxygenNote: 6.0.1
