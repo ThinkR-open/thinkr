@@ -32,5 +32,5 @@ iris %>% clean_names() %>% head
 
 ```R
 # install.packages("devtools")
-devtools::install_github("ThinkRstat/ThinkR")
+devtools::install_github("ThinkR-open/ThinkR")
 ```
