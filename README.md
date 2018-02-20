@@ -1,4 +1,10 @@
-# thinkR
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/thinkr)](https://cran.r-project.org/package=thinkr)
+[![](http://cranlogs.r-pkg.org/badges/thinkr)](https://cran.r-project.org/package=thinkr)
+[![Travis build status](https://travis-ci.org/ThinkR-open/thinkr.svg?branch=master)](https://travis-ci.org/ThinkR-open/thinkr)
+ [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ThinkR-open/thinkr?branch=master&svg=true)](https://ci.appveyor.com/project/ThinkR-open/thinkr)
+ [![Coverage status](https://codecov.io/gh/ThinkR-open/thinkr/branch/master/graph/badge.svg)](https://codecov.io/github/ThinkR-open/thinkr?branch=master)
+
+# thinkr
 
 the peep function allow you to "have a look" inside a dplyr workflow 
 
@@ -32,5 +38,5 @@ iris %>% clean_names() %>% head
 
 ```R
 # install.packages("devtools")
-devtools::install_github("ThinkRstat/ThinkR")
+devtools::install_github("ThinkR-open/thinkr")
 ```
