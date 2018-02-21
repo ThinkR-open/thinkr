@@ -1,5 +1,6 @@
 #' delete .test file in testthat folder
 #'
+#' Only usefull during package developpement using testthat package
 #' @export
 #'
 .efface_test <-function(){

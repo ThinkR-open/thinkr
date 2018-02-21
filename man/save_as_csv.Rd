@@ -5,12 +5,12 @@
 \alias{save_as_csv}
 \title{export a data.frame to csv}
 \usage{
-save_as_csv(dataset, filename, row.names = FALSE, ...)
+save_as_csv(dataset, path, row.names = FALSE, ...)
 }
 \arguments{
 \item{dataset}{a data.frame}
 
-\item{filename}{the path}
+\item{path}{the path}
 
 \item{row.names}{booleen do we have to save the row names}
 
@@ -25,7 +25,7 @@ export a data.frame to csv
 \examples{
 
 \dontrun{
-iris \%>\% save_as_csv("output.csv") \%>\% browseURL()
+iris \%>\% save_as_csv(file.path(tempdir(),'coucou.csv')) \%>\% browseURL()
 
 
 }

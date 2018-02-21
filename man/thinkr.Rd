@@ -8,4 +8,5 @@
 \title{thinkr}
 \description{
 a package with some (useful) tools
+(data manipulation)
 }

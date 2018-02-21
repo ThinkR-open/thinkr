@@ -5,12 +5,16 @@
 \alias{clean_levels}
 \title{Clean levels label}
 \usage{
-clean_levels(vec, verbose = TRUE)
+clean_levels(vec, verbose = FALSE, translit = FALSE, punct = FALSE)
 }
 \arguments{
 \item{vec}{a factor}
 
-\item{verbose}{}
+\item{verbose}{booleen is the function verbose}
+
+\item{translit}{booleen remove non ascii character}
+
+\item{punct}{booleen do you remove punctuation}
 }
 \description{
 Clean levels label

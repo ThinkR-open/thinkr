@@ -6,7 +6,7 @@
 \title{Save all ggplot in a pptx}
 \usage{
 all_ggplot_to_pptx(out = "tous_les_graphs.pptx", open = TRUE, png = TRUE,
-  folder = "dessin")
+  folder = "dessin", global = TRUE)
 }
 \arguments{
 \item{out}{output file name}
@@ -16,6 +16,8 @@ all_ggplot_to_pptx(out = "tous_les_graphs.pptx", open = TRUE, png = TRUE,
 \item{png}{booleen also save as png}
 
 \item{folder}{png's folder}
+
+\item{global}{booleen use .GlobalEnv}
 }
 \description{
 Save all ggplot in a pptx

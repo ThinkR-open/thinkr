@@ -5,12 +5,14 @@
 \alias{clean_names}
 \title{clean_names}
 \usage{
-clean_names(dataset, verbose = TRUE, translit = TRUE)
+clean_names(dataset, verbose = FALSE, translit = TRUE)
 }
 \arguments{
 \item{dataset}{a dataframe}
 
-\item{verbose}{boolean}
+\item{verbose}{logical}
+
+\item{translit}{logical remove non ascii character}
 }
 \value{
 a dataframe

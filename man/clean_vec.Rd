@@ -5,19 +5,21 @@
 \alias{clean_vec}
 \title{Clean character vector}
 \usage{
-clean_vec(vec, verbose = TRUE, unique = TRUE, keep_number = FALSE,
-  translit = TRUE)
+clean_vec(vec, verbose = FALSE, unique = TRUE, keep_number = FALSE,
+  translit = TRUE, punct = TRUE)
 }
 \arguments{
 \item{vec}{character vector to clean}
 
-\item{verbose}{booleen is the function verbose}
+\item{verbose}{logical is the function verbose}
 
-\item{unique}{booleen do we have to apply make_unique}
+\item{unique}{logical do we have to apply make_unique}
 
-\item{keep_number}{booleen keep number at begining}
+\item{keep_number}{logical keep number at begining}
 
-\item{translit}{booleen remove non ascii character}
+\item{translit}{logical remove non ascii character}
+
+\item{punct}{logical do you remove punctuation}
 }
 \description{
 Clean character vector

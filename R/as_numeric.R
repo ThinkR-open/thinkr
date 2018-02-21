@@ -1,13 +1,13 @@
 
 #' transform a vector into numeric
 #'
-#' @param vec
+#' @param vec a vector
 #'
-#' @return a vector
+#' @return a numeric vector
 #' @export
 #'
 
-as.mon.numeric<-function(vec){
+as_mon_numeric<-function(vec){
   if (is.character(vec)){
     vec<-as.factor(vec)
   }
@@ -26,6 +26,7 @@ as.mon.numeric<-function(vec){
   out<-gsub("%","",vec)
   out<-gsub(" ","",out)
   out <-gsub(",",".",out)
+  out <-gsub(";",".",out)
   out<-as.numeric(as.character(out))
 
   return(out)
