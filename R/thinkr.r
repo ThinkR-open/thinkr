@@ -5,6 +5,7 @@
 #'
 #'
 #' @encoding UTF-8
+#' @aliases thinkr
+#' @name    thinkr-package
 #' @docType package
-#' @name thinkr
 NULL
