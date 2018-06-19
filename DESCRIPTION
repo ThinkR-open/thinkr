@@ -8,6 +8,7 @@ Description: Some tools for cleaning up messy 'Excel' files to be suitable for R
 License: GPL-3
 Imports: 
     assertthat,
+    devtools,
     dplyr,
     ggplot2,
     lazyeval,
@@ -15,6 +16,7 @@ Imports:
     magrittr,
     officer,
     stats,
+    stringi,
     stringr,
     tidyr,
     utils
