@@ -2,6 +2,7 @@
 #'
 #' Only usefull during package developpement using testthat package
 #' @export
+#' @importFrom devtools package_file
 #'
 .efface_test <-function(){
   liste_a_effacer <-   normalizePath(list.files(path=file.path(devtools::package_file(),"tests","testthat"),pattern = "*.test$",full.names = TRUE))

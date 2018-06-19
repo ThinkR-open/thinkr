@@ -34,6 +34,7 @@ clean_names <- function(dataset,
 #' @param punct logical do you remove punctuation
 #'
 #' @importFrom magrittr '%>%'
+#' @importFrom stringi stri_trans_general
 #'
 #' @encoding UTF-8
 #' @export

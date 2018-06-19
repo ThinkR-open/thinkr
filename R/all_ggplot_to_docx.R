@@ -6,7 +6,7 @@
 #' @param global booleen use .GlobalEnv
 #' @param folder png's folder
 #'
-#' @importFrom  officer ph_with_gg add_slide
+#' @importFrom  officer read_pptx ph_with_gg add_slide
 #' @import ggplot2
 #' @import assertthat
 #' @return NULL
