@@ -4,11 +4,11 @@
 #'
 #' @export
 #'
-from_excel_to_posixt <- function(vec){
+from_excel_to_posixt <- function(vec,origin="1904-01-01"){
 
 
   as.POSIXct(as_mon_numeric(vec)* (60*60*24)
-                  , origin="1899-12-30"
+                  , origin=origin#"1899-12-30"
                   , tz="GMT")
 
 }
