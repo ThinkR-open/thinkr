@@ -6,7 +6,7 @@
 #' @param global booleen use .GlobalEnv
 #' @param folder png's folder
 #'
-#' @importFrom  ReporteRs pptx addSlide addPlot writeDoc
+#' @importFrom  officer ph_with_gg add_slide
 #' @import ggplot2
 #' @import assertthat
 #' @return NULL
@@ -20,8 +20,8 @@
 all_ggplot_to_pptx <- function(out="tous_les_graphs.pptx",open=TRUE,png=TRUE,folder="dessin",global=TRUE){
   assertthat::assert_that(has_extension(out,"pptx"))
   try(dir.create(folder,recursive = TRUE),silent=TRUE)
-  doc <- pptx( title = "title" )
-  dim(doc)
+  # doc <- pptx( title = "title" )
+  doc <- read_pptx()
   if (global){
     lenv<- .GlobalEnv}else{
       lenv<- parent.frame()
@@ -35,12 +35,17 @@ all_ggplot_to_pptx <- function(out="tous_les_graphs.pptx",open=TRUE,png=TRUE,fol
 
 
 
-    if(is.ggplot(eval(envir = lenv,parse(text=k)))){
-      doc <- addSlide( doc, slide.layout = "Title and Content" )
-      doc <- addPlot( doc, function( ) print( eval(envir = lenv,parse(text=k)) ),
-                      offx =0    ,offy=0,
-                      height = dim(doc)$slide.dim[["height"]],width = dim(doc)$slide.dim[["width"]],
-                      vector.graphic = TRUE, editable = TRUE )
+    if (is.ggplot(eval(envir = lenv,parse(text=k)))){
+      # doc <- addSlide( doc, slide.layout = "Title and Content" )
+      doc <- doc %>%
+        add_slide(layout = "Title and Content", master = "Office Theme")
+      doc <- ph_with_gg(doc, value = eval(envir = lenv,parse(text=k)) )
+      # doc <-  ph_with_vg(doc, value = print(eval(envir = lenv,parse(text=k))),type = "body" )
+      # doc <-  ph_with_vg(doc, value = eval(envir = lenv,parse(text=k)),type = "body" )
+      # doc <- addPlot( doc, function( ) print( eval(envir = lenv,parse(text=k)) ),
+      #                 offx =0    ,offy=0,
+      #                 height = dim(doc)$slide.dim[["height"]],width = dim(doc)$slide.dim[["width"]],
+      #                 vector.graphic = TRUE, editable = TRUE )
       if(png){
         ggsave(eval(envir = lenv,parse(text=k)),filename = paste0(folder,"/",k,".png"),height=15,width=23)
 
@@ -51,11 +56,12 @@ all_ggplot_to_pptx <- function(out="tous_les_graphs.pptx",open=TRUE,png=TRUE,fol
     # on gere les ggsurvfit
 
     if(class(eval(envir = lenv,parse(text=k)))[1]=="ggsurvplot"){
-      doc <- addSlide( doc, slide.layout = "Title and Content" )
-      doc <- addPlot( doc, function( ) print( eval(envir = lenv,parse(text=k))$plot ),
-                      offx =0    ,offy=0,
-                      height = dim(doc)$slide.dim[["height"]],width = dim(doc)$slide.dim[["width"]],
-                      vector.graphic = TRUE, editable = TRUE )
+      doc <- doc %>%
+        add_slide(layout = "Title and Content", master = "Office Theme")
+      doc <- ph_with_gg(doc, value = eval(envir = lenv,parse(text=k))$plot )
+
+
+
       if(png){
         ggsave(eval(envir = lenv,parse(text=k))$plot,filename = paste0(folder,"/",k,".png"),height=15,width=23)
 
@@ -68,8 +74,7 @@ all_ggplot_to_pptx <- function(out="tous_les_graphs.pptx",open=TRUE,png=TRUE,fol
 
 
   }
-
-  ReporteRs::writeDoc(doc,file=out)
+  print(doc, target = out )
   if (open){browseURL(out)}
   invisible()
 }

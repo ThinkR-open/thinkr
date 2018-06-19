@@ -4,10 +4,12 @@
 \alias{from_excel_to_posixt}
 \title{transform the excel numeric date format into POSIXct}
 \usage{
-from_excel_to_posixt(vec)
+from_excel_to_posixt(vec, origin = "1904-01-01")
 }
 \arguments{
 \item{vec}{a vector}
+
+\item{origin}{a date-time object, or something which can be coerced by as.POSIXct(tz = "GMT") to such an object.}
 }
 \description{
 transform the excel numeric date format into POSIXct

@@ -1,6 +1,7 @@
 #' transform the excel numeric date format into POSIXct
 #'
 #' @param vec a vector
+#' @param origin a date-time object, or something which can be coerced by as.POSIXct(tz = "GMT") to such an object.
 #'
 #' @export
 #'
