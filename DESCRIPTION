@@ -19,7 +19,8 @@ Imports:
     stringi,
     stringr,
     tidyr,
-    utils
+    utils,
+    rvg
 Suggests: 
     knitr,
     rmarkdown

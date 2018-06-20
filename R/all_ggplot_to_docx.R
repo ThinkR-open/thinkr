@@ -13,6 +13,7 @@
 #' @encoding UTF-8
 #' @export
 #' @importFrom utils browseURL
+#' @importFrom rvg ph_with_vg
 #'
 #' @examples
 #' \dontrun{
@@ -35,19 +36,20 @@ all_ggplot_to_pptx <- function(out="tous_les_graphs.pptx",open=TRUE,png=TRUE,fol
 
 
 
-    if (is.ggplot(eval(envir = lenv,parse(text=k)))){
+    if (is.ggplot(
+      # eval(envir = lenv,parse(text=k))
+      get(k,envir = lenv)
+      )){
       # doc <- addSlide( doc, slide.layout = "Title and Content" )
       doc <- doc %>%
-        add_slide(layout = "Title and Content", master = "Office Theme")
-      doc <- ph_with_gg(doc, value = eval(envir = lenv,parse(text=k)) )
-      # doc <-  ph_with_vg(doc, value = print(eval(envir = lenv,parse(text=k))),type = "body" )
-      # doc <-  ph_with_vg(doc, value = eval(envir = lenv,parse(text=k)),type = "body" )
-      # doc <- addPlot( doc, function( ) print( eval(envir = lenv,parse(text=k)) ),
-      #                 offx =0    ,offy=0,
-      #                 height = dim(doc)$slide.dim[["height"]],width = dim(doc)$slide.dim[["width"]],
-      #                 vector.graphic = TRUE, editable = TRUE )
+        add_slide(layout = "Title and Content", master = "Office Theme") %>%
+        ph_with_vg(ggobj = get(k,envir = lenv),type = "body" )
+
       if(png){
-        ggsave(eval(envir = lenv,parse(text=k)),filename = paste0(folder,"/",k,".png"),height=15,width=23)
+        ggsave(
+          # eval(envir = lenv,parse(text=k))
+          get(k,envir = lenv)
+          ,filename = paste0(folder,"/",k,".png"),height=15,width=23)
 
       }
     }
@@ -55,10 +57,10 @@ all_ggplot_to_pptx <- function(out="tous_les_graphs.pptx",open=TRUE,png=TRUE,fol
 
     # on gere les ggsurvfit
 
-    if(class(eval(envir = lenv,parse(text=k)))[1]=="ggsurvplot"){
+    if(class(get(k,envir = lenv))[1]=="ggsurvplot"){
       doc <- doc %>%
-        add_slide(layout = "Title and Content", master = "Office Theme")
-      doc <- ph_with_gg(doc, value = eval(envir = lenv,parse(text=k))$plot )
+        add_slide(layout = "Title and Content", master = "Office Theme") %>%
+        ph_with_vg( ggobj = get(k,envir = lenv)$plot )
 
 
 
