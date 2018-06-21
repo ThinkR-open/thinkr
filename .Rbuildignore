@@ -3,3 +3,5 @@
 .git/*
 .git
 ^data-raw$
+^\.travis\.yml$
+^codecov\.yml$

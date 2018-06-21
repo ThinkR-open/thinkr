@@ -23,6 +23,9 @@ Imports:
     rvg
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 LazyData: TRUE
 RoxygenNote: 6.0.1
+Depends: 
+    R (>= 3.1)
