@@ -33,7 +33,6 @@ clean_names <- function(dataset,
 #' @param translit logical remove non ascii character
 #' @param punct logical do you remove punctuation
 #'
-#' @importFrom magrittr '%>%'
 #' @importFrom stringi stri_trans_general
 #'
 #' @encoding UTF-8
@@ -49,14 +48,12 @@ clean_vec <- function(vec,
   if (unique) {
     vec <- make_unique(vec)
   }
-  if (!keep_number) {
-    vec <- make.names(vec)
-  }
-
   if (translit) {
     vec <- stringi::stri_trans_general(vec, "latin-ascii")
   }
-
+  if (!keep_number) {
+    vec <- make.names(vec)
+  }
   if (punct) {
     vec <- vec %>%
       gsub(perl = TRUE, "[[:punct:]]+", "_", .)
@@ -93,7 +90,7 @@ clean_vec <- function(vec,
 #'
 #' @encoding UTF-8
 #' @export
-#' @import assertthat
+#' @importFrom assertthat assert_that
 
 clean_levels<-function(vec,verbose=FALSE,
                        translit=FALSE,
@@ -102,7 +99,7 @@ clean_levels<-function(vec,verbose=FALSE,
   var <- vec
   old <- levels(vec)
   vec <- levels(vec)
-  vec<-clean_vec(vec,unique = FALSE,keep_number = TRUE,
+  vec <- clean_vec(vec,unique = FALSE,keep_number = TRUE,
                  translit=translit,punct=punct)
   vec <- gsub("_+"," ",vec)
   vec <- gsub("\\s+$","",vec)

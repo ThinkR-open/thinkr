@@ -1,0 +1,93 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(thinkr)
+library(dplyr)
+```
+
+
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/thinkr)](https://cran.r-project.org/package=thinkr)
+[![](http://cranlogs.r-pkg.org/badges/thinkr)](https://cran.r-project.org/package=thinkr)[![Travis-CI Build Status](https://travis-ci.org/ThinkR-open/thinkr.svg?branch=master)](https://travis-ci.org/ThinkR-open/thinkr)[![Coverage status](https://codecov.io/gh/ThinkR-open/thinkr/branch/master/graph/badge.svg)](https://codecov.io/github/ThinkR-open/thinkr?branch=master)
+
+
+```{r, echo=FALSE, out.width="250px"}
+knitr::include_graphics("https://raw.githubusercontent.com/ThinkR-open/thinkr/master/inst/img/thinkr-hex-thinkr-package.png")
+```
+
+# thinkr
+
+{thinkr} is a set of tools for Cleaning Up Messy Files.  
+
+It contains some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best.
+
+## Installation
+
+CRAN version
+```{r, eval=FALSE}
+install.packages("thinkr")
+```
+
+Github development version
+```{r, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("ThinkR-open/thinkr")
+```
+
+## Usage
+
+### `peep`
+`peep` function allows to print intermediate outputs inside a {dplyr}/`%>%` workflow 
+
+```{r}
+data(iris)
+# just symbols
+iris %>% peep(head,tail) %>% rename(species = Species) %>% summary
+# expressions with .
+iris %>% peep(head(., n = 2), tail(., n = 3) ) %>% summary
+# or both
+iris %>% peep(head, tail(., n = 3) ) %>% summary
+# use verbose to see what happens
+iris %>% peep(head,tail(., n = 3), verbose = TRUE) %>% summary
+```
+
+### `clean_*`
+
+Function `clean_names` allows to clean dirty names, while removing special characters, spaces, ...
+
+```{r}
+data(iris)
+
+iris %>% head
+iris %>% clean_names() %>% head
+```
+
+Function `clean_vec` allows to clean character vectors, while removing special characters, spaces, ...
+
+```{r}
+vector <- c("Jean Sébastien", "Anne-Sophie", "44@Bernard2")
+cleaned <- clean_vec(vector)
+cleaned
+```
+
+### Excel positions
+
+Find Excel column position name from column number and inversely
+
+```{r}
+ncol_to_excel(6)
+excel_to_ncol('AF')
+```
+
+## Code of Conduct
+
+Please note that the 'thinkr' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
