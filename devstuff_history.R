@@ -9,7 +9,12 @@ desc::desc_add_orcid("0000-0002-1565-9313",
                      family = "Rochette")
 
 # Documentation
+usethis::use_pkgdown()
+usethis::use_git_ignore("docs")
+pkgdown::build_site()
+
 attachment::att_to_description(dir.v = "")
+
 
 # Development
 devtools::check()

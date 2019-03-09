@@ -1,8 +1,6 @@
-Type: Package
 Package: thinkr
 Title: Tools for Cleaning Up Messy Files
 Version: 0.14
-Date: 2018-06-19
 Authors@R: 
     c(person(given = "Vincent",
              family = "Guyader",

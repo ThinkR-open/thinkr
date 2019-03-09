@@ -1,3 +1,5 @@
+^docs$
+^_pkgdown\.yml$
 ^CODE_OF_CONDUCT\.md$
 ^README\.Rmd$
 ^devstuff_history\.R$
