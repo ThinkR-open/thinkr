@@ -3,6 +3,8 @@ language: R
 sudo: false
 cache: packages
 
+r_github_packages:
+  - ThinkR-open/thinkr  # pre-install to avoid vignette package errors
 
 # build matrix; turn on vdiffr only on r release
 matrix:
@@ -14,8 +16,13 @@ matrix:
     - Rscript -e 'remotes::install_cran("pkgdown")'
     - Rscript -e 'remotes::install_github("ThinkR-open/thinkrtemplate")'
     deploy:
-      provider: script
-      script: Rscript -e 'pkgdown::deploy_site_github(verbose = TRUE)'
+      provider: pages
+      skip-cleanup: true
+      github-token: $GITHUB_PAT
+      keep-history: true
+      local-dir: docs
+      on:
+        branch: master
       skip_cleanup: true
   - r: oldrel
   - r: 3.2
@@ -25,3 +32,4 @@ matrix:
 
 after_success:
   - Rscript -e 'covr::codecov()'
+
