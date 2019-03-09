@@ -30,7 +30,6 @@ excel_to_ncol<-function(col_name){
 #'
 #' @export
 #' @importFrom tidyr unite
-#' @importFrom magrittr %>%
 #' @examples
 #' excel_col()
 #' ncol_to_excel(6)

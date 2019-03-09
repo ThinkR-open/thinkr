@@ -5,10 +5,11 @@
 #' @param row.names booleen do we have to save the row names
 #' @param ... other write.csv parameters
 #'
+#' @importFrom assertthat assert_that has_extension is.dir is.writeable not_empty
+#' @importFrom utils write.csv2
+#'
 #' @return file name as character
 #' @export
-#' @import assertthat
-#' @importFrom utils write.csv2
 #' @encoding UTF-8
 #' @examples
 #'
