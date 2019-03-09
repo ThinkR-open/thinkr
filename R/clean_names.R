@@ -49,14 +49,12 @@ clean_vec <- function(vec,
   if (unique) {
     vec <- make_unique(vec)
   }
-  if (!keep_number) {
-    vec <- make.names(vec)
-  }
-
   if (translit) {
     vec <- stringi::stri_trans_general(vec, "latin-ascii")
   }
-
+  if (!keep_number) {
+    vec <- make.names(vec)
+  }
   if (punct) {
     vec <- vec %>%
       gsub(perl = TRUE, "[[:punct:]]+", "_", .)
