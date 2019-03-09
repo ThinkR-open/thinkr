@@ -32,4 +32,5 @@ matrix:
 
 after_success:
   - Rscript -e 'covr::codecov()'
+  - Rscript -e 'pkgdown::build_site()'
 
