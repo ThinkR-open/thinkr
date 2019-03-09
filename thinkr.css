@@ -34,3 +34,11 @@ h2 {
     background-color: #DE633C;
     border-radius: 3px;
 }
+
+.navbar-brand {
+    background-image: url(logo.png);
+    background-size: 32px auto;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 55px;
+}
