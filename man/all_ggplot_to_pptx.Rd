@@ -5,8 +5,13 @@
 \alias{all_ggplot_to_pptx}
 \title{Save all ggplot in a pptx}
 \usage{
-all_ggplot_to_pptx(out = "tous_les_graphs.pptx", open = TRUE,
-  png = TRUE, folder = "dessin", global = TRUE)
+all_ggplot_to_pptx(
+  out = "tous_les_graphs.pptx",
+  open = TRUE,
+  png = TRUE,
+  folder = "dessin",
+  global = TRUE
+)
 }
 \arguments{
 \item{out}{output file name}
