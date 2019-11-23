@@ -6,11 +6,11 @@
 #' @param global booleen use .GlobalEnv
 #' @param folder png's folder
 #'
-#' @importFrom  officer read_pptx ph_with_gg add_slide
+#' @importFrom  officer read_pptx ph_with add_slide ph_location_type
 #' @importFrom ggplot2 ggsave is.ggplot
 #' @importFrom assertthat assert_that has_extension
 #' @importFrom utils browseURL
-#' @importFrom rvg ph_with_vg
+#' @importFrom rvg dml
 #'
 #' @return NULL
 #' @encoding UTF-8
@@ -40,7 +40,7 @@ all_ggplot_to_pptx <- function(out = "tous_les_graphs.pptx", open = TRUE, png = 
       # doc <- addSlide( doc, slide.layout = "Title and Content" )
       doc <- doc %>%
         add_slide(layout = "Title and Content", master = "Office Theme") %>%
-        ph_with_vg(ggobj = get(k, envir = lenv), type = "body")
+        ph_with(dml(ggobj = get(k, envir = lenv)), location = ph_location_type(type = "body"))
 
       if (png) {
         ggsave(
@@ -55,7 +55,7 @@ all_ggplot_to_pptx <- function(out = "tous_les_graphs.pptx", open = TRUE, png = 
     if (class(get(k, envir = lenv))[1] == "ggsurvplot") {
       doc <- doc %>%
         add_slide(layout = "Title and Content", master = "Office Theme") %>%
-        ph_with_vg(ggobj = get(k, envir = lenv)$plot)
+        ph_with(dml(ggobj = get(k, envir = lenv)$plot), location = ph_location_type(type = "body"))
 
       if (png) {
         ggsave(eval(envir = lenv, parse(text = k))$plot, filename = paste0(folder, "/", k, ".png"), height = 15, width = 23)
