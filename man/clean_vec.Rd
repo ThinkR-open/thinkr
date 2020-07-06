@@ -5,8 +5,14 @@
 \alias{clean_vec}
 \title{Clean character vector}
 \usage{
-clean_vec(vec, verbose = FALSE, unique = TRUE, keep_number = FALSE,
-  translit = TRUE, punct = TRUE)
+clean_vec(
+  vec,
+  verbose = FALSE,
+  unique = TRUE,
+  keep_number = FALSE,
+  translit = TRUE,
+  punct = TRUE
+)
 }
 \arguments{
 \item{vec}{character vector to clean}

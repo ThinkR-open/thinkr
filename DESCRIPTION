@@ -1,6 +1,6 @@
 Package: thinkr
 Title: Tools for Cleaning Up Messy Files
-Version: 0.15.001
+Version: 0.15
 Authors@R: 
     c(person(given = "Vincent",
              family = "Guyader",
@@ -48,4 +48,4 @@ Suggests:
     testthat
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 7.0.1
+RoxygenNote: 7.1.0

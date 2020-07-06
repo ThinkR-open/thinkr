@@ -6,7 +6,7 @@
 \alias{thinkr-package}
 \title{thinkr: Tools for Cleaning Up Messy Files}
 \description{
-\if{html}{\figure{logo.png}{options: align='right'}}
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
 Some tools for cleaning up messy 'Excel' files to
     be suitable for R. People who have been working with 'Excel' for years
@@ -24,11 +24,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Vincent Guyader \email{vincent@thinkr.fr} (0000-0003-0671-9270)
+\strong{Maintainer}: Vincent Guyader \email{vincent@thinkr.fr} (\href{https://orcid.org/0000-0003-0671-9270}{ORCID})
 
 Authors:
 \itemize{
-  \item Sébastien Rochette \email{sebastien@thinkr.fr} (0000-0002-1565-9313)
+  \item Sébastien Rochette \email{sebastien@thinkr.fr} (\href{https://orcid.org/0000-0002-1565-9313}{ORCID})
 }
 
 Other contributors:
