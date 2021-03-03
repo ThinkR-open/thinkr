@@ -16,7 +16,8 @@
 #' unite("fus",a,b,remove=FALSE,sep="")
 #' dataset %>% replace_pattern("a",'"XXX') %>% summary()
 #'
-#'
+#' # With exact matching
+#' dataset %>% replace_pattern("a",'"XXX', exact = TRUE)
 #'
 #'
 replace_pattern <- function(dataset,pattern,replacement,exact=FALSE){

@@ -15,6 +15,10 @@ pkgdown::build_site()
 
 attachment::att_to_description(dir.v = "")
 
+# Formation N2-groupe Benoit Janushan Victor
+usethis::use_vignette('replace_pattern')
+usethis::use_test(name = "replace_pattern")
+
 
 # Development
 devtools::check()
