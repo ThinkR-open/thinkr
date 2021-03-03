@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 Test that the levels of a factor `vec` are all to be found in the character vector `lev`. 
 
-```{r setup}
+```{r setup, error=TRUE}
 library(thinkr)
 
 ## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica")
