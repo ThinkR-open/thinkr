@@ -12,7 +12,7 @@
 #' is_likert(iris$Species,c("setosa","versicolor"))
 #'
 is_likert <- function(vec,lev){
-  assertthat::assert_that(is.factor(vec))
+  assertthat::assert_that(is.factor(vec)|is.character(vec))
   assertthat::assert_that(all(is.character(lev)))
 
   # if (!is.factor(vec)){return(FALSE)}
