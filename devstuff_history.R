@@ -25,6 +25,9 @@ attachment::att_amend_desc()
 usethis::use_vignette('replace_pattern')
 usethis::use_test(name = "replace_pattern")
 
+usethis::use_test("is_likert")
+devtools::test()
+
 
 # Development
 devtools::check()
