@@ -15,6 +15,9 @@ pkgdown::build_site()
 
 attachment::att_to_description(dir.v = "")
 
+usethis::use_test("is_likert")
+devtools::test()
+
 
 # Development
 devtools::check()
