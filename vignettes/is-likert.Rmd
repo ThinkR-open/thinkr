@@ -1,0 +1,42 @@
+---
+title: "is-likert"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{is-likert}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## is-likert
+
+Test that the levels of a factor `vec` are all to be found in the character vector `lev`. 
+
+```{r setup}
+library(thinkr)
+
+## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica")
+is_likert(iris$Species, c("setosa", "versicolor", "virginica"))
+
+## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica", "banana"), even though there is actually no level "banana"
+# A message is printed
+is_likert(iris$Species, c("setosa", "versicolor", "virginica", "banana"))
+
+## returns FALSE because the "virginica" level of iris$species is missing
+is_likert(iris$Species, c("setosa", "versicolor"))
+
+## returns an error
+is_likert(iris$Species, c(1, 2))
+
+## returns no error as the numeric is coerced to a character.
+is_likert(iris$Species, c("setosa", 2))
+
+```
+
+Warnings: is-likert does not test whether the levels of `vec` are a likert scale as in psychometry. See <https://en.wikipedia.org/wiki/Likert_scale> for example.
