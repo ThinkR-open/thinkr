@@ -15,7 +15,7 @@ is_likert <- function(vec,lev){
   assertthat::assert_that(is.factor(vec)|is.character(vec))
   assertthat::assert_that(all(is.character(lev)))
 
-  # if (!is.factor(vec)){return(FALSE)}
+  if (!is.factor(vec)){return(FALSE)}
   # Send message if a level is unused in factors levels
   if (any(!lev %in% levels(vec))) {
     message(paste("At least one element of lev is not in levels of vec"))
