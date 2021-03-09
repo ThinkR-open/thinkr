@@ -10,3 +10,5 @@
 ^data-raw$
 ^\.travis\.yml$
 ^codecov\.yml$
+^\.github$
+^pkgdown$

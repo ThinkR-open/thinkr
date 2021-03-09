@@ -11,7 +11,13 @@ desc::desc_add_orcid("0000-0002-1565-9313",
 # Documentation
 usethis::use_pkgdown()
 usethis::use_git_ignore("docs")
+usethis::use_git_ignore("pkgdown")
 pkgdown::build_site()
+
+# CI
+usethis::use_github_action_check_standard()
+usethis::use_github_action("pkgdown")
+usethis::use_github_action("test-coverage")
 
 attachment::att_to_description(dir.v = "")
 

@@ -1,11 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
 
+[![R-CMD-check](https://github.com/ThinkR-open/thinkr/workflows/R-CMD-check/badge.svg)](https://github.com/ThinkR-open/thinkr/actions)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/thinkr)](https://cran.r-project.org/package=thinkr)
-[![](http://cranlogs.r-pkg.org/badges/thinkr)](https://cran.r-project.org/package=thinkr)[![Travis-CI
-Build
-Status](https://travis-ci.org/ThinkR-open/thinkr.svg?branch=master)](https://travis-ci.org/ThinkR-open/thinkr)[![Coverage
+[![](http://cranlogs.r-pkg.org/badges/thinkr)](https://cran.r-project.org/package=thinkr)
+[![Coverage
 status](https://codecov.io/gh/ThinkR-open/thinkr/branch/master/graph/badge.svg)](https://codecov.io/github/ThinkR-open/thinkr?branch=master)
+<!-- badges: end -->
 
 <img src="https://raw.githubusercontent.com/ThinkR-open/thinkr/master/inst/img/thinkr-hex-thinkr-package.png" width="250px" />
 
