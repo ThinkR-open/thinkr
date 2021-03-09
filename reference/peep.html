@@ -44,7 +44,7 @@
 
 <meta property="og:title" content="peep the pipeline — peep" />
 <meta property="og:description" content="peep some data at one step of a pipeline." />
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="http://thinkr-open.github.io/thinkr/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,7 +105,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -119,7 +119,7 @@
         </li>
         <li>
   <a href="https://github.com/Thinkr-open/thinkr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -145,7 +145,7 @@
     <p>peep some data at one step of a pipeline.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>peep</span>(<span class='no'>data</span>, <span class='no'>...</span>, <span class='kw'>printer</span> <span class='kw'>=</span> <span class='no'>print</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>peep</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>...</span>, printer <span class='op'>=</span> <span class='va'>print</span>, verbose <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -174,16 +174,17 @@ placeholder for the data</p></td>
     <p>the input data</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>( <span class='fu'><a href='https://rdrr.io/r/base/library.html'>require</a></span>(<span class='no'>magrittr</span>) ){
+    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span> <span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span> <span class='op'>)</span><span class='op'>{</span>
   <span class='co'># just symbols</span>
-  <span class='no'>iris</span> <span class='kw'>%&gt;%</span> <span class='fu'>peep</span>(<span class='no'>head</span>,<span class='no'>tail</span>) <span class='kw'>%&gt;%</span> <span class='no'>summary</span>
+  <span class='va'>iris</span> <span class='op'>%&gt;%</span> <span class='fu'>peep</span><span class='op'>(</span><span class='va'>head</span>,<span class='va'>tail</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='va'>summary</span>
   <span class='co'># expressions with .</span>
-  <span class='no'>iris</span> <span class='kw'>%&gt;%</span> <span class='fu'>peep</span>(<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>.</span>, <span class='kw'>n</span><span class='kw'>=</span><span class='fl'>2</span>),<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span>(<span class='no'>.</span>, <span class='kw'>n</span><span class='kw'>=</span><span class='fl'>3</span>) ) <span class='kw'>%&gt;%</span> <span class='no'>summary</span>
+  <span class='va'>iris</span> <span class='op'>%&gt;%</span> <span class='fu'>peep</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>.</span>, n<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>,<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>.</span>, n<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='va'>summary</span>
   <span class='co'># or both</span>
-  <span class='no'>iris</span> <span class='kw'>%&gt;%</span> <span class='fu'>peep</span>(<span class='no'>head</span>,<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span>(<span class='no'>.</span>, <span class='kw'>n</span><span class='kw'>=</span><span class='fl'>3</span>) ) <span class='kw'>%&gt;%</span> <span class='no'>summary</span>
+  <span class='va'>iris</span> <span class='op'>%&gt;%</span> <span class='fu'>peep</span><span class='op'>(</span><span class='va'>head</span>,<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>.</span>, n<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='va'>summary</span>
   <span class='co'># use verbose to see what happens</span>
-  <span class='no'>iris</span> <span class='kw'>%&gt;%</span> <span class='fu'>peep</span>(<span class='no'>head</span>,<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span>(<span class='no'>.</span>, <span class='kw'>n</span><span class='kw'>=</span><span class='fl'>3</span>), <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) <span class='kw'>%&gt;%</span> <span class='no'>summary</span>
-}</div><div class='output co'>#&gt; <span class='message'>Loading required package: magrittr</span></div><div class='output co'>#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+  <span class='va'>iris</span> <span class='op'>%&gt;%</span> <span class='fu'>peep</span><span class='op'>(</span><span class='va'>head</span>,<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>.</span>, n<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='va'>summary</span>
+<span class='op'>}</span>
+</div><div class='output co'>#&gt; <span class='message'>Loading required package: magrittr</span></div><div class='output co'>#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 #&gt; 1          5.1         3.5          1.4         0.2  setosa
 #&gt; 2          4.9         3.0          1.4         0.2  setosa
 #&gt; 3          4.7         3.2          1.3         0.2  setosa
