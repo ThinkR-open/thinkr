@@ -21,6 +21,10 @@ usethis::use_github_action("test-coverage")
 
 attachment::att_to_description(dir.v = "")
 
+# Formation N2-groupe Benoit Janushan Victor
+usethis::use_vignette('replace_pattern')
+usethis::use_test(name = "replace_pattern")
+
 
 # Development
 devtools::check()
