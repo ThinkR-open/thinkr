@@ -30,7 +30,8 @@ data.frame(a=as.factor(letters)[1:7],b=letters[1:7],c=1:7,stringsAsFactors = FAL
 unite("fus",a,b,remove=FALSE,sep="")
 dataset \%>\% replace_pattern("a",'"XXX') \%>\% summary()
 
-
+# With exact matching
+dataset \%>\% replace_pattern("a",'"XXX', exact = TRUE)
 
 
 }

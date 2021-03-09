@@ -19,7 +19,7 @@ usethis::use_github_action_check_standard()
 usethis::use_github_action("pkgdown")
 usethis::use_github_action("test-coverage")
 
-attachment::att_to_description(dir.v = "")
+attachment::att_amend_desc()
 
 # Formation N2-groupe Benoit Janushan Victor
 usethis::use_vignette('replace_pattern')
