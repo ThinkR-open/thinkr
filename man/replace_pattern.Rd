@@ -23,15 +23,17 @@ a data.frame
 Replace pattern everywhere in a data.frame
 }
 \examples{
-library(dplyr)
-library(tidyr)
-dataset <-
-data.frame(a=as.factor(letters)[1:7],b=letters[1:7],c=1:7,stringsAsFactors = FALSE) \%>\%
-unite("fus",a,b,remove=FALSE,sep="")
-dataset \%>\% replace_pattern("a",'"XXX') \%>\% summary()
+dataset <- data.frame(
+  col_a = as.factor(letters)[1:7],
+  col_b = letters[1:7],
+  col_c = 1:7,
+  col_d = paste0(letters[1:7], letters[1:7]),
+  stringsAsFactors = FALSE
+)
+
+# replace pattern
+replace_pattern(dataset, "a", "XXX-")
 
 # With exact matching
-dataset \%>\% replace_pattern("a",'"XXX', exact = TRUE)
-
-
+replace_pattern(dataset, "a", "XXX-", exact = TRUE)
 }

@@ -1,8 +1,8 @@
 ---
-title: "is-likert"
+title: "tools"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{is-likert}
+  %\VignetteIndexEntry{tools}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,13 +14,41 @@ knitr::opts_chunk$set(
 )
 ```
 
-## is-likert
+```{r setup}
+library(thinkr)
+```
+
+
+# replace_pattern(): Replace all occurencies of a `pattern` by `replacement`
+
+Scan a dataframe and return it with all occurencies of a `pattern` changed to `replacement`, keeping the same format.
+
+```{r}
+dataset <- data.frame(
+  col_a = as.factor(letters)[1:7], 
+  col_b = letters[1:7],
+  col_c = 1:7,
+  col_d = paste0(letters[1:7], letters[1:7]),
+  stringsAsFactors = FALSE) 
+
+# Show original dataset
+dataset
+
+# replace pattern
+replace_pattern(dataset, "a", 'XXX-')
+```
+
+Exact matching with argument `exact`
+
+```{r}
+replace_pattern(dataset, "a", 'XXX-', exact = TRUE)
+```
+
+## is_likert(): Verify levels of a factor vector
 
 Test that the levels of a factor `vec` are all to be found in the character vector `lev`. 
 
-```{r setup, error=TRUE}
-library(thinkr)
-
+```{r, error=TRUE, message=TRUE}
 ## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica")
 is_likert(iris$Species, c("setosa", "versicolor", "virginica"))
 
