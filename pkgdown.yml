@@ -1,8 +1,9 @@
 pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: {}
-last_built: 2021-03-09T09:02Z
+articles:
+  replace_pattern: replace_pattern.html
+last_built: 2021-03-09T09:45Z
 urls:
   reference: http://thinkr-open.github.io/thinkr//reference
   article: http://thinkr-open.github.io/thinkr//articles

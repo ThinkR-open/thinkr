@@ -112,6 +112,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/replace_pattern.html">replace_pattern</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -205,8 +217,16 @@
 #&gt;                     e      :1                      3rd Qu.:5.5  
 #&gt;                     f      :1                      Max.   :7.0  
 #&gt;                     (Other):1                                   </div><div class='input'>
-
-
+<span class='co'># With exact matching</span>
+<span class='va'>dataset</span> <span class='op'>%&gt;%</span> <span class='fu'>replace_pattern</span><span class='op'>(</span><span class='st'>"a"</span>,<span class='st'>'"XXX'</span>, exact <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   fus    a    b c
+#&gt; 1  aa "XXX "XXX 1
+#&gt; 2  bb    b    b 2
+#&gt; 3  cc    c    c 3
+#&gt; 4  dd    d    d 4
+#&gt; 5  ee    e    e 5
+#&gt; 6  ff    f    f 6
+#&gt; 7  gg    g    g 7</div><div class='input'>
 
 </div></pre>
   </div>
