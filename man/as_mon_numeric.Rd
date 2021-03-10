@@ -15,3 +15,6 @@ a numeric vector
 \description{
 transform a vector into numeric
 }
+\examples{
+as_mon_numeric(c("1","0","1"))
+}
