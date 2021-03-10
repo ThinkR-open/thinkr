@@ -18,3 +18,8 @@ attachment::att_to_description(dir.v = "")
 
 # Development
 devtools::check()
+
+# test unitaire
+
+usethis::use_test("as_numeric.R")
+devtools::test()
