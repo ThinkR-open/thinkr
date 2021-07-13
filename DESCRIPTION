@@ -27,7 +27,6 @@ Depends:
     R (>= 3.1)
 Imports: 
     assertthat,
-    crayon,
     devtools,
     dplyr (>= 0.8.0),
     ggplot2,
@@ -35,8 +34,6 @@ Imports:
     lubridate,
     magrittr,
     officer,
-    purrr,
-    readr,
     rvg,
     stats,
     stringi,
