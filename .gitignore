@@ -21,3 +21,5 @@ vignettes/*.pdf
 .Rproj.user
 pkgdown
 inst/doc
+# Working with fusen locally
+dev
