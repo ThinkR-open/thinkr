@@ -19,13 +19,7 @@ excel_col()
 \item{col_name}{the culumn name}
 }
 \description{
-Get position or excel name of column
-
-return excel column name from a position number
-
-return excel column position number from a column name
-
-return all excel column name
+\code{ncol_to_excel} returns excel column name from a position number. \code{excel_to_ncol} returns excel column position number from a column name. \code{excel_col} returns all excel column name.
 }
 \examples{
 ncol_to_excel(35)

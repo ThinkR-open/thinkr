@@ -27,7 +27,10 @@ Add this chunk using `fusen::description_chunk()`
 --> 
 
 
-# excel_names
+# excel_names : dealing with column names and position number
+
+`ncol_to_excel` returns excel column name from a position number. `excel_to_ncol` returns excel column position number from a column name. `excel_col` returns all excel column name.
+
 
 ```{r examples-1}
 ncol_to_excel(35)

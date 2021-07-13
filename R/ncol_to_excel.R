@@ -1,5 +1,13 @@
 #' Get position or excel name of column
+#'
+#' \code{ncol_to_excel} returns excel column name from a position number. \code{excel_to_ncol} returns excel column position number from a column name. \code{excel_col} returns all excel column name.
+#'
+#' @param n the column position
+#' @param col_name the culumn name
 #' 
+#' @importFrom assertthat assert_that
+#' @importFrom tidyr unite
+#'
 #' @name excel_names
 NULL
 
@@ -8,10 +16,7 @@ NULL
 #'
 #' @rdname excel_names
 #'
-#' @param n the column position
-#'
 #' @export
-#' @importFrom assertthat assert_that
 #' @examples
 #' ncol_to_excel(35)
 #' excel_to_ncol("BF")
@@ -25,13 +30,9 @@ ncol_to_excel<-function(n){
 }
 
 
-#' return excel column position number from a column name
-#'
+
 #' @rdname excel_names
-#' @param col_name the culumn name
-#'
 #' @export
-#' @importFrom assertthat assert_that
 excel_to_ncol<-function(col_name){
   assert_that(all(is.character(col_name)))
   assert_that(all(nchar(col_name) > 1 & nchar(col_name) <= 2))
@@ -40,14 +41,8 @@ excel_to_ncol<-function(col_name){
 }
 
 
-
-
-#' return all excel column name
-#'
 #' @rdname excel_names
 #' @export
-#'
-#' @importFrom tidyr unite
 excel_col <- function(){
   # require(dplyr)
   c(LETTERS,
