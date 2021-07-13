@@ -32,10 +32,9 @@ ncol_to_excel<-function(n){
 #'
 #' @export
 #' @importFrom assertthat assert_that
-#' @importFrom dplyr between
 excel_to_ncol<-function(col_name){
   assert_that(all(is.character(col_name)))
-  assert_that(all(between(nchar(col_name), 1, 2)))
+  assert_that(all(nchar(col_name) > 1 & nchar(col_name) <= 2))
   assert_that(all(unlist(strsplit(col_name, split = "")) %in% LETTERS))
   which(excel_col() %in% col_name)
 }
