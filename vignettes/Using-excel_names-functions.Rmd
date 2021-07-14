@@ -1,8 +1,8 @@
 ---
-title: "Using excel_names functions"
+title: "Functions related to Excel"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using excel_names functions}
+  %\VignetteIndexEntry{Functions related to Excel}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,18 +18,12 @@ knitr::opts_chunk$set(
 library(thinkr)
 ```
 
-<!--
 
-# Description of your package
+# `excel_names` : dealing with column names and position number
 
-This will fill the description of your package.
-Add this chunk using `fusen::description_chunk()`
---> 
-
-
-# excel_names : dealing with column names and position number
-
-`ncol_to_excel` returns excel column name from a position number. `excel_to_ncol` returns excel column position number from a column name. `excel_col` returns all excel column name.
+- `ncol_to_excel()` returns Excel column name from a position number. 
+- `excel_to_ncol()` returns Excel column position number from a column name. 
+- `excel_col()` returns all Excel column name.
 
 
 ```{r examples-1}
@@ -40,13 +34,4 @@ ncol_to_excel(1:6)
 excel_to_ncol(c('AF', 'AG', 'AH'))
 ```
 
-<!-- # Inflate your package -->
-
-<!-- You're one inflate from paper to box. -->
-<!-- Build your package from this very Rmarkdown using `fusen::inflate()` -->
-
-<!-- - Verify your `"DESCRIPTION"` file has been updated -->
-<!-- - Verify your function is in `"R/"` directory -->
-<!-- - Verify your test is in `"tests/testthat/"` directory -->
-<!-- - Verify this Rmd appears in `"vignettes/"` directory -->
 
