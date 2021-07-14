@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   tools: tools.html
-last_built: 2021-03-09T10:27Z
+last_built: 2021-07-14T07:35Z
 urls:
   reference: http://thinkr-open.github.io/thinkr//reference
   article: http://thinkr-open.github.io/thinkr//articles

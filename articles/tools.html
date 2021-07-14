@@ -124,10 +124,10 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr">thinkr</a></span><span class="op">)</span></code></pre></div>
-<div id="replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement" class="section level1">
-<h1 class="hasAnchor">
+<div id="replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement" class="section level2">
+<h2 class="hasAnchor">
 <a href="#replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement" class="anchor"></a>replace_pattern(): Replace all occurencies of a <code>pattern</code> by <code>replacement</code>
-</h1>
+</h2>
 <p>Scan a dataframe and return it with all occurencies of a <code>pattern</code> changed to <code>replacement</code>, keeping the same format.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
@@ -169,6 +169,7 @@
 <span class="co">#&gt; 5     e     e     5    ee</span>
 <span class="co">#&gt; 6     f     f     6    ff</span>
 <span class="co">#&gt; 7     g     g     7    gg</span></code></pre></div>
+</div>
 <div id="is_likert-verify-levels-of-a-factor-vector" class="section level2">
 <h2 class="hasAnchor">
 <a href="#is_likert-verify-levels-of-a-factor-vector" class="anchor"></a>is_likert(): Verify levels of a factor vector</h2>
@@ -196,8 +197,9 @@
 <span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; At least one element of lev is not in levels of vec</span>
 <span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<blockquote>
 <p>Warnings: is-likert does not test whether the levels of <code>vec</code> are a likert scale as in psychometry. See <a href="https://en.wikipedia.org/wiki/Likert_scale" class="uri">https://en.wikipedia.org/wiki/Likert_scale</a> for example.</p>
-</div>
+</blockquote>
 </div>
   </div>
 
