@@ -1,0 +1,37 @@
+---
+title: "Functions related to Excel"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Functions related to Excel}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(thinkr)
+```
+
+
+# `excel_names` : dealing with column names and position number
+
+- `ncol_to_excel()` returns Excel column name from a position number. 
+- `excel_to_ncol()` returns Excel column position number from a column name. 
+- `excel_col()` returns all Excel column name.
+
+
+```{r examples-1}
+ncol_to_excel(35)
+excel_to_ncol("BF")
+excel_col()
+ncol_to_excel(1:6)
+excel_to_ncol(c('AF', 'AG', 'AH'))
+```
+
+

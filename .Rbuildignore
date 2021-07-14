@@ -12,3 +12,5 @@
 ^codecov\.yml$
 ^\.github$
 ^pkgdown$
+^dev$
+^thinkr\.Rproj$

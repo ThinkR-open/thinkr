@@ -28,6 +28,8 @@ usethis::use_test(name = "replace_pattern")
 usethis::use_test("is_likert")
 devtools::test()
 
+# PR
+usethis::pr_fetch(15)
 
 # Development
 devtools::check()
