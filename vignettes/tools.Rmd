@@ -19,7 +19,7 @@ library(thinkr)
 ```
 
 
-# replace_pattern(): Replace all occurencies of a `pattern` by `replacement`
+## replace_pattern(): Replace all occurencies of a `pattern` by `replacement`
 
 Scan a dataframe and return it with all occurencies of a `pattern` changed to `replacement`, keeping the same format.
 
@@ -67,4 +67,4 @@ is_likert(iris$Species, c("setosa", 2))
 
 ```
 
-Warnings: is-likert does not test whether the levels of `vec` are a likert scale as in psychometry. See <https://en.wikipedia.org/wiki/Likert_scale> for example.
+> Warnings: is-likert does not test whether the levels of `vec` are a likert scale as in psychometry. See <https://en.wikipedia.org/wiki/Likert_scale> for example.
