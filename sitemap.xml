@@ -25,10 +25,7 @@
     <loc>http://thinkr-open.github.io/thinkr//reference/dput_levels.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/excel_col.html</loc>
-  </url>
-  <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/excel_to_ncol.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr//reference/excel_names.html</loc>
   </url>
   <url>
     <loc>http://thinkr-open.github.io/thinkr//reference/find_name.html</loc>
@@ -64,9 +61,6 @@
     <loc>http://thinkr-open.github.io/thinkr//reference/make_unique.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/ncol_to_excel.html</loc>
-  </url>
-  <url>
     <loc>http://thinkr-open.github.io/thinkr//reference/peep.html</loc>
   </url>
   <url>
@@ -83,6 +77,9 @@
   </url>
   <url>
     <loc>http://thinkr-open.github.io/thinkr//reference/thinkr-package.html</loc>
+  </url>
+  <url>
+    <loc>http://thinkr-open.github.io/thinkr//articles/Using-excel_names-functions.html</loc>
   </url>
   <url>
     <loc>http://thinkr-open.github.io/thinkr//articles/tools.html</loc>
