@@ -13,7 +13,7 @@ usethis::use_pkgdown()
 usethis::use_git_ignore("docs")
 pkgdown::build_site()
 
-attachment::att_to_description(dir.v = "")
+attachment::att_amend_desc()
 
 
 # Development

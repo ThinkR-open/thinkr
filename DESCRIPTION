@@ -14,12 +14,12 @@ Authors@R:
              comment = c(ORCID = "0000-0002-1565-9313")),
       person(given = "ThinkR",
              role = "cph"))
-Description: Some tools for cleaning up messy 'Excel' files to
-    be suitable for R. People who have been working with 'Excel' for years
-    built more or less complicated sheets with names, characters, formats
-    that are not homogeneous. To be able to use them in R nowadays, we
-    built a set of functions that will avoid the majority of importation
-    problems and keep all the data at best.
+Description: Some tools for cleaning up messy 'Excel' files to be suitable
+    for R. People who have been working with 'Excel' for years built more
+    or less complicated sheets with names, characters, formats that are
+    not homogeneous. To be able to use them in R nowadays, we built a set
+    of functions that will avoid the majority of importation problems and
+    keep all the data at best.
 License: GPL-3
 URL: https://github.com/Thinkr-open/thinkr
 BugReports: https://github.com/Thinkr-open/thinkr/issues
@@ -27,16 +27,14 @@ Depends:
     R (>= 3.1)
 Imports: 
     assertthat,
-    crayon,
     devtools,
     dplyr,
     ggplot2,
     lazyeval,
     lubridate,
     magrittr,
+    methods,
     officer,
-    purrr,
-    readr,
     rvg,
     stats,
     stringi,
@@ -44,7 +42,6 @@ Imports:
     tidyr,
     utils
 Suggests: 
-    covr,
     testthat
 Encoding: UTF-8
 LazyData: TRUE

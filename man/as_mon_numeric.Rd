@@ -2,7 +2,7 @@
 % Please edit documentation in R/as_numeric.R
 \name{as_mon_numeric}
 \alias{as_mon_numeric}
-\title{transform a vector into numeric}
+\title{Transform a vector into numeric if meaningful, even with bad decimal, space or \%}
 \usage{
 as_mon_numeric(vec)
 }
@@ -13,8 +13,16 @@ as_mon_numeric(vec)
 a numeric vector
 }
 \description{
-transform a vector into numeric
+Transform a vector into numeric if meaningful, even with bad decimal, space or \%
+}
+\details{
+Note that text and factors are not transformed as numeric (except FALSE, TRUE, F, T),
+contrary to R default behavior with `as.numeric(factor())`
 }
 \examples{
-as_mon_numeric(c("1","0","1"))
+as_mon_numeric(c("1", "0", "1"))
+as_mon_numeric(c("1.3", "1,5", "1;6", "16\%", "17 87 "))
+as_mon_numeric(c(TRUE, "A", "F"))
+as_mon_numeric(c(TRUE, TRUE, FALSE))
+as_mon_numeric(factor(c("toto", "tata", "toto")))
 }
