@@ -28,11 +28,12 @@ Depends:
 Imports: 
     assertthat,
     devtools,
-    dplyr (>= 0.8.0),
+    dplyr,
     ggplot2,
     lazyeval,
     lubridate,
     magrittr,
+    methods,
     officer,
     rvg,
     stats,

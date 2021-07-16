@@ -33,3 +33,8 @@ usethis::pr_fetch(15)
 
 # Development
 devtools::check()
+
+# test unitaire
+
+usethis::use_test("as_numeric.R")
+devtools::test()
