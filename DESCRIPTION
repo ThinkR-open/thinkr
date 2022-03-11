@@ -1,19 +1,13 @@
 Package: thinkr
 Title: Tools for Cleaning Up Messy Files
 Version: 0.15
-Authors@R: 
-    c(person(given = "Vincent",
-             family = "Guyader",
-             role = c("aut", "cre"),
-             email = "vincent@thinkr.fr",
-             comment = c(ORCID = "0000-0003-0671-9270")),
-      person(given = "Sébastien",
-             family = "Rochette",
-             role = "aut",
-             email = "sebastien@thinkr.fr",
-             comment = c(ORCID = "0000-0002-1565-9313")),
-      person(given = "ThinkR",
-             role = "cph"))
+Authors@R: c(
+    person("Vincent", "Guyader", , "vincent@thinkr.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-0671-9270")),
+    person("Sébastien", "Rochette", , "sebastien@thinkr.fr", role = "aut",
+           comment = c(ORCID = "0000-0002-1565-9313")),
+    person("ThinkR", role = "cph")
+  )
 Description: Some tools for cleaning up messy 'Excel' files to be suitable
     for R. People who have been working with 'Excel' for years built more
     or less complicated sheets with names, characters, formats that are
@@ -27,6 +21,7 @@ Depends:
     R (>= 3.1)
 Imports: 
     assertthat,
+    cli,
     devtools,
     dplyr,
     ggplot2,
@@ -49,4 +44,4 @@ VignetteBuilder:
     knitr
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
