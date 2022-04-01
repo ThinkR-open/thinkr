@@ -1,6 +1,6 @@
 test_that("Startup message is ok", {
     expect_equal(
-        capture_output_lines(.onAttach()),
+        capture_output_lines(startupmessage()),
         c(
             "  #################################################################  ",
             " #############################   ####################################  ",
