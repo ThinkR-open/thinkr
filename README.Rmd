@@ -48,6 +48,18 @@ Github development version
 devtools::install_github("ThinkR-open/thinkr")
 ```
 
+Once installed, you can load `{thinkr}`:
+
+```{r}
+library(thinkr)
+```
+
+or without the package startup message:
+
+```{r}
+suppressPackageStartupMessages(library(thinkr))
+```
+
 ## Usage
 
 ### `peep`
@@ -56,13 +68,22 @@ devtools::install_github("ThinkR-open/thinkr")
 ```{r}
 data(iris)
 # just symbols
-iris %>% peep(head,tail) %>% rename(species = Species) %>% summary
+iris %>%
+  peep(head, tail) %>%
+  rename(species = Species) %>%
+  summary()
 # expressions with .
-iris %>% peep(head(., n = 2), tail(., n = 3) ) %>% summary
+iris %>%
+  peep(head(., n = 2), tail(., n = 3)) %>%
+  summary()
 # or both
-iris %>% peep(head, tail(., n = 3) ) %>% summary
+iris %>%
+  peep(head, tail(., n = 3)) %>%
+  summary()
 # use verbose to see what happens
-iris %>% peep(head,tail(., n = 3), verbose = TRUE) %>% summary
+iris %>%
+  peep(head, tail(., n = 3), verbose = TRUE) %>%
+  summary()
 ```
 
 ### `clean_*`
@@ -72,8 +93,10 @@ Function `clean_names` allows to clean dirty names, while removing special chara
 ```{r}
 data(iris)
 
-iris %>% head
-iris %>% clean_names() %>% head
+iris %>% head()
+iris %>%
+  clean_names() %>%
+  head()
 ```
 
 Function `clean_vec` allows to clean character vectors, while removing special characters, spaces, ...
@@ -90,7 +113,7 @@ Find Excel column position name from column number and inversely
 
 ```{r}
 ncol_to_excel(6)
-excel_to_ncol('AF')
+excel_to_ncol("AF")
 ```
 
 ## Code of Conduct

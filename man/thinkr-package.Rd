@@ -8,12 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Some tools for cleaning up messy 'Excel' files to be suitable
-    for R. People who have been working with 'Excel' for years built more
-    or less complicated sheets with names, characters, formats that are
-    not homogeneous. To be able to use them in R nowadays, we built a set
-    of functions that will avoid the majority of importation problems and
-    keep all the data at best.
+Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best.
 }
 \seealso{
 Useful links:
