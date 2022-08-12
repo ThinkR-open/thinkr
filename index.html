@@ -49,6 +49,8 @@
 -->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -61,23 +63,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">thinkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.15</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -102,7 +98,7 @@
 </div>
         </li>
         <li>
-  <a href="https://github.com/Thinkr-open/thinkr/">
+  <a href="https://github.com/Thinkr-open/thinkr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -122,187 +118,204 @@
 
 
 <p><img src="https://raw.githubusercontent.com/ThinkR-open/thinkr/master/inst/img/thinkr-hex-thinkr-package.png" width="250px"></p>
-<div id="thinkr" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#thinkr" class="anchor"></a>thinkr</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="thinkr">thinkr<a class="anchor" aria-label="anchor" href="#thinkr"></a>
+</h1></div>
 <p>{thinkr} is a set of tools for Cleaning Up Messy Files.</p>
 <p>It contains some tools for cleaning up messy ‘Excel’ files to be suitable for R. People who have been working with ‘Excel’ for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>CRAN version</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"thinkr"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"thinkr"</span><span class="op">)</span></span></code></pre></div>
 <p>Github development version</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"ThinkR-open/thinkr"</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
-<div id="peep" class="section level3">
-<h3 class="hasAnchor">
-<a href="#peep" class="anchor"></a><code>peep</code>
-</h3>
-<p><code>peep</code> function allows to print intermediate outputs inside a {dplyr}/<code><a href="reference/%&gt;%.html">%&gt;%</a></code> workflow</p>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ThinkR-open/thinkr"</span><span class="op">)</span></span></code></pre></div>
+<p>Once installed, you can load <a href="https://github.com/Thinkr-open/thinkr" class="external-link">thinkr</a>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span>
-<span class="co"># just symbols</span>
-<span class="va">iris</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="va">head</span>,<span class="va">tail</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">rename</span><span class="op">(</span>species <span class="op">=</span> <span class="va">Species</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="va">summary</span>
-<span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span>
-<span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span>
-<span class="co">#&gt; 145          6.7         3.3          5.7         2.5 virginica</span>
-<span class="co">#&gt; 146          6.7         3.0          5.2         2.3 virginica</span>
-<span class="co">#&gt; 147          6.3         2.5          5.0         1.9 virginica</span>
-<span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span>
-<span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span>
-<span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span>
-<span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span>
-<span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span>
-<span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span>
-<span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span>
-<span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span>
-<span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span>
-<span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span>
-<span class="co">#&gt;        species  </span>
-<span class="co">#&gt;  setosa    :50  </span>
-<span class="co">#&gt;  versicolor:50  </span>
-<span class="co">#&gt;  virginica :50  </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt; </span>
-<span class="co"># expressions with .</span>
-<span class="va">iris</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">)</span> <span class="op">%&gt;%</span> <span class="va">summary</span>
-<span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span>
-<span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span>
-<span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span>
-<span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span>
-<span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span>
-<span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span>
-<span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span>
-<span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span>
-<span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span>
-<span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span>
-<span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span>
-<span class="co">#&gt;        Species  </span>
-<span class="co">#&gt;  setosa    :50  </span>
-<span class="co">#&gt;  versicolor:50  </span>
-<span class="co">#&gt;  virginica :50  </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt; </span>
-<span class="co"># or both</span>
-<span class="va">iris</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="va">head</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">)</span> <span class="op">%&gt;%</span> <span class="va">summary</span>
-<span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span>
-<span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span>
-<span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span>
-<span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span>
-<span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span>
-<span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span>
-<span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span>
-<span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span>
-<span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span>
-<span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span>
-<span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span>
-<span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span>
-<span class="co">#&gt;        Species  </span>
-<span class="co">#&gt;  setosa    :50  </span>
-<span class="co">#&gt;  versicolor:50  </span>
-<span class="co">#&gt;  virginica :50  </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt; </span>
-<span class="co"># use verbose to see what happens</span>
-<span class="va">iris</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="va">head</span>,<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="va">summary</span>
-<span class="co">#&gt; head(.)</span>
-<span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span>
-<span class="co">#&gt; tail(., n = 3)</span>
-<span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span>
-<span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span>
-<span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span>
-<span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span>
-<span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span>
-<span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span>
-<span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span>
-<span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span>
-<span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span>
-<span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span>
-<span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span>
-<span class="co">#&gt;        Species  </span>
-<span class="co">#&gt;  setosa    :50  </span>
-<span class="co">#&gt;  versicolor:50  </span>
-<span class="co">#&gt;  virginica :50  </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt;                 </span>
-<span class="co">#&gt; </span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr" class="external-link">thinkr</a></span><span class="op">)</span></span></code></pre></div>
+<p>or without the package startup message:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr" class="external-link">thinkr</a></span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="clean_" class="section level3">
-<h3 class="hasAnchor">
-<a href="#clean_" class="anchor"></a><code>clean_*</code>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<div class="section level3">
+<h3 id="peep">
+<code>peep</code><a class="anchor" aria-label="anchor" href="#peep"></a>
+</h3>
+<p><code>peep</code> function allows to print intermediate outputs inside a {dplyr}/<code>%&gt;%</code> workflow</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span><span class="co"># just symbols</span></span>
+<span><span class="va">iris</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="va">head</span>, <span class="va">tail</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">rename</span><span class="op">(</span>species <span class="op">=</span> <span class="va">Species</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span>
+<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span></span>
+<span><span class="co">#&gt; 145          6.7         3.3          5.7         2.5 virginica</span></span>
+<span><span class="co">#&gt; 146          6.7         3.0          5.2         2.3 virginica</span></span>
+<span><span class="co">#&gt; 147          6.3         2.5          5.0         1.9 virginica</span></span>
+<span><span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span></span>
+<span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span></span>
+<span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span></span>
+<span><span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span></span>
+<span><span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span></span>
+<span><span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span></span>
+<span><span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span></span>
+<span><span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span></span>
+<span><span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span></span>
+<span><span class="co">#&gt;        species  </span></span>
+<span><span class="co">#&gt;  setosa    :50  </span></span>
+<span><span class="co">#&gt;  versicolor:50  </span></span>
+<span><span class="co">#&gt;  virginica :50  </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co"># expressions with .</span></span>
+<span><span class="va">iris</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span></span>
+<span><span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span></span>
+<span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span></span>
+<span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span></span>
+<span><span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span></span>
+<span><span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span></span>
+<span><span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span></span>
+<span><span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span></span>
+<span><span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span></span>
+<span><span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span></span>
+<span><span class="co">#&gt;        Species  </span></span>
+<span><span class="co">#&gt;  setosa    :50  </span></span>
+<span><span class="co">#&gt;  versicolor:50  </span></span>
+<span><span class="co">#&gt;  virginica :50  </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co"># or both</span></span>
+<span><span class="va">iris</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="va">head</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span>
+<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span></span>
+<span><span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span></span>
+<span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span></span>
+<span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span></span>
+<span><span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span></span>
+<span><span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span></span>
+<span><span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span></span>
+<span><span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span></span>
+<span><span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span></span>
+<span><span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span></span>
+<span><span class="co">#&gt;        Species  </span></span>
+<span><span class="co">#&gt;  setosa    :50  </span></span>
+<span><span class="co">#&gt;  versicolor:50  </span></span>
+<span><span class="co">#&gt;  virginica :50  </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co"># use verbose to see what happens</span></span>
+<span><span class="va">iris</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/peep.html">peep</a></span><span class="op">(</span><span class="va">head</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">.</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; head(.)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span>
+<span><span class="co">#&gt; tail(., n = 3)</span></span>
+<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span></span>
+<span><span class="co">#&gt; 148          6.5         3.0          5.2         2.0 virginica</span></span>
+<span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3 virginica</span></span>
+<span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8 virginica</span></span>
+<span><span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span></span>
+<span><span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span></span>
+<span><span class="co">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span></span>
+<span><span class="co">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span></span>
+<span><span class="co">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span></span>
+<span><span class="co">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span></span>
+<span><span class="co">#&gt;        Species  </span></span>
+<span><span class="co">#&gt;  setosa    :50  </span></span>
+<span><span class="co">#&gt;  versicolor:50  </span></span>
+<span><span class="co">#&gt;  virginica :50  </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt;                 </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="clean_">
+<code>clean_*</code><a class="anchor" aria-label="anchor" href="#clean_"></a>
 </h3>
 <p>Function <code>clean_names</code> allows to clean dirty names, while removing special characters, spaces, …</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span>
-
-<span class="va">iris</span> <span class="op">%&gt;%</span> <span class="va">head</span>
-<span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span>
-<span class="va">iris</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/clean_names.html">clean_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="va">head</span>
-<span class="co">#&gt;   sepal_length sepal_width petal_length petal_width species</span>
-<span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></code></pre></div>
-<p>Function <code>clean_vec</code> allows to clean character vectors, while removing special characters, spaces, …</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">vector</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Jean Sébastien"</span>, <span class="st">"Anne-Sophie"</span>, <span class="st">"44@Bernard2"</span><span class="op">)</span>
-<span class="va">cleaned</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/clean_vec.html">clean_vec</a></span><span class="op">(</span><span class="va">vector</span><span class="op">)</span>
-<span class="va">cleaned</span>
-<span class="co">#&gt; [1] "jean_sebastien" "anne_sophie"    "x44_bernard2"</span></code></pre></div>
-</div>
-<div id="excel-positions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#excel-positions" class="anchor"></a>Excel positions</h3>
-<p>Find Excel column position name from column number and inversely</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/excel_names.html">ncol_to_excel</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>
-<span class="co">#&gt; [1] "F"</span>
-<span class="fu"><a href="reference/excel_names.html">excel_to_ncol</a></span><span class="op">(</span><span class="st">'AF'</span><span class="op">)</span>
-<span class="co">#&gt; [1] 32</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">iris</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span>
+<span><span class="va">iris</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/clean_names.html">clean_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   sepal_length sepal_width petal_length petal_width species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span></code></pre></div>
+<p>Function <code>clean_vec</code> allows to clean character vectors, while removing special characters, spaces, …</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">vector</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Jean Sébastien"</span>, <span class="st">"Anne-Sophie"</span>, <span class="st">"44@Bernard2"</span><span class="op">)</span></span>
+<span><span class="va">cleaned</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/clean_vec.html">clean_vec</a></span><span class="op">(</span><span class="va">vector</span><span class="op">)</span></span>
+<span><span class="va">cleaned</span></span>
+<span><span class="co">#&gt; [1] "jean_sebastien" "anne_sophie"    "x44_bernard2"</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="excel-positions">Excel positions<a class="anchor" aria-label="anchor" href="#excel-positions"></a>
+</h3>
+<p>Find Excel column position name from column number and inversely</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/excel_names.html">ncol_to_excel</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "F"</span></span>
+<span><span class="fu"><a href="reference/excel_names.html">excel_to_ncol</a></span><span class="op">(</span><span class="st">"AF"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 32</span></span></code></pre></div>
 </div>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
 <p>Please note that the ‘thinkr’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
@@ -311,58 +324,67 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=thinkr">https://​cloud.r-project.org/​package=thinkr</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/Thinkr-open/thinkr/">https://​github.com/​Thinkr-open/​thinkr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/Thinkr-open/thinkr/issues">https://​github.com/​Thinkr-open/​thinkr/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=thinkr" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/Thinkr-open/thinkr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/Thinkr-open/thinkr/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Vincent Guyader <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-0671-9270" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Sébastien Rochette <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1565-9313" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing thinkr</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/ThinkR-open/thinkr/actions"><img src="https://github.com/ThinkR-open/thinkr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://cran.r-project.org/package=thinkr"><img src="http://www.r-pkg.org/badges/version/thinkr" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://cran.r-project.org/package=thinkr"><img src="http://cranlogs.r-pkg.org/badges/thinkr"></a></li>
-<li><a href="https://codecov.io/github/ThinkR-open/thinkr?branch=master"><img src="https://codecov.io/gh/ThinkR-open/thinkr/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
+<li>Vincent Guyader <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-0671-9270" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Sébastien Rochette <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1565-9313" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/ThinkR-open/thinkr/actions" class="external-link"><img src="https://github.com/ThinkR-open/thinkr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://cran.r-project.org/package=thinkr" class="external-link"><img src="http://www.r-pkg.org/badges/version/thinkr" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=thinkr" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/thinkr"></a></li>
+<li><a href="https://codecov.io/github/ThinkR-open/thinkr?branch=master" class="external-link"><img src="https://codecov.io/gh/ThinkR-open/thinkr/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="thinkr">
-  <p>thinkr is a  <strong>ThinkR</strong> package. Learn more at <a href="https://rtask.thinkr.fr">rtask.thinkr.fr</a>.</p>
+  <p></p>
+<p>Developed by Vincent Guyader, Sébastien Rochette.</p>,<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
 <div class="author">
   <p>
-    Developed by Vincent Guyader, Sébastien Rochette.
-    Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
+    Developed by .
+    Site built by <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>.
   </p>
 </div>
 
@@ -371,6 +393,8 @@
 
   
 
+
+  
 
   </body>
 </html>

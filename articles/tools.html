@@ -44,6 +44,8 @@
 -->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -56,23 +58,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">thinkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.15</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -97,7 +93,7 @@
 </div>
         </li>
         <li>
-  <a href="https://github.com/Thinkr-open/thinkr/">
+  <a href="https://github.com/Thinkr-open/thinkr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -118,7 +114,7 @@
       <h1 data-toc-skip>tools</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/Thinkr-open/thinkr/blob/master/vignettes/tools.Rmd"><code>vignettes/tools.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/Thinkr-open/thinkr/blob/HEAD/vignettes/tools.Rmd" class="external-link"><code>vignettes/tools.Rmd</code></a></small>
       <div class="hidden name"><code>tools.Rmd</code></div>
 
     </div>
@@ -126,82 +122,81 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr">thinkr</a></span><span class="op">)</span></code></pre></div>
-<div id="replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement" class="section level2">
-<h2 class="hasAnchor">
-<a href="#replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement" class="anchor"></a>replace_pattern(): Replace all occurencies of a <code>pattern</code> by <code>replacement</code>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr" class="external-link">thinkr</a></span><span class="op">)</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement">replace_pattern(): Replace all occurencies of a <code>pattern</code> by <code>replacement</code><a class="anchor" aria-label="anchor" href="#replace_pattern-replace-all-occurencies-of-a-pattern-by-replacement"></a>
 </h2>
 <p>Scan a dataframe and return it with all occurencies of a <code>pattern</code> changed to <code>replacement</code>, keeping the same format.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
-  col_a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">letters</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>, 
-  col_b <span class="op">=</span> <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>,
-  col_c <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">7</span>,
-  col_d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>, <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span>,
-  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> 
-
-<span class="co"># Show original dataset</span>
-<span class="va">dataset</span>
-<span class="co">#&gt;   col_a col_b col_c col_d</span>
-<span class="co">#&gt; 1     a     a     1    aa</span>
-<span class="co">#&gt; 2     b     b     2    bb</span>
-<span class="co">#&gt; 3     c     c     3    cc</span>
-<span class="co">#&gt; 4     d     d     4    dd</span>
-<span class="co">#&gt; 5     e     e     5    ee</span>
-<span class="co">#&gt; 6     f     f     6    ff</span>
-<span class="co">#&gt; 7     g     g     7    gg</span>
-
-<span class="co"># replace pattern</span>
-<span class="fu"><a href="../reference/replace_pattern.html">replace_pattern</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="st">"a"</span>, <span class="st">'XXX-'</span><span class="op">)</span>
-<span class="co">#&gt;   col_a col_b col_c    col_d</span>
-<span class="co">#&gt; 1  XXX-  XXX-     1 XXX-XXX-</span>
-<span class="co">#&gt; 2     b     b     2       bb</span>
-<span class="co">#&gt; 3     c     c     3       cc</span>
-<span class="co">#&gt; 4     d     d     4       dd</span>
-<span class="co">#&gt; 5     e     e     5       ee</span>
-<span class="co">#&gt; 6     f     f     6       ff</span>
-<span class="co">#&gt; 7     g     g     7       gg</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  col_a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">letters</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>, </span>
+<span>  col_b <span class="op">=</span> <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>,</span>
+<span>  col_c <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">7</span>,</span>
+<span>  col_d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>, <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="co"># Show original dataset</span></span>
+<span><span class="va">dataset</span></span>
+<span><span class="co">#&gt;   col_a col_b col_c col_d</span></span>
+<span><span class="co">#&gt; 1     a     a     1    aa</span></span>
+<span><span class="co">#&gt; 2     b     b     2    bb</span></span>
+<span><span class="co">#&gt; 3     c     c     3    cc</span></span>
+<span><span class="co">#&gt; 4     d     d     4    dd</span></span>
+<span><span class="co">#&gt; 5     e     e     5    ee</span></span>
+<span><span class="co">#&gt; 6     f     f     6    ff</span></span>
+<span><span class="co">#&gt; 7     g     g     7    gg</span></span>
+<span></span>
+<span><span class="co"># replace pattern</span></span>
+<span><span class="fu"><a href="../reference/replace_pattern.html">replace_pattern</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="st">"a"</span>, <span class="st">'XXX-'</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   col_a col_b col_c    col_d</span></span>
+<span><span class="co">#&gt; 1  XXX-  XXX-     1 XXX-XXX-</span></span>
+<span><span class="co">#&gt; 2     b     b     2       bb</span></span>
+<span><span class="co">#&gt; 3     c     c     3       cc</span></span>
+<span><span class="co">#&gt; 4     d     d     4       dd</span></span>
+<span><span class="co">#&gt; 5     e     e     5       ee</span></span>
+<span><span class="co">#&gt; 6     f     f     6       ff</span></span>
+<span><span class="co">#&gt; 7     g     g     7       gg</span></span></code></pre></div>
 <p>Exact matching with argument <code>exact</code></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/replace_pattern.html">replace_pattern</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="st">"a"</span>, <span class="st">'XXX-'</span>, exact <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt;   col_a col_b col_c col_d</span>
-<span class="co">#&gt; 1  XXX-  XXX-     1    aa</span>
-<span class="co">#&gt; 2     b     b     2    bb</span>
-<span class="co">#&gt; 3     c     c     3    cc</span>
-<span class="co">#&gt; 4     d     d     4    dd</span>
-<span class="co">#&gt; 5     e     e     5    ee</span>
-<span class="co">#&gt; 6     f     f     6    ff</span>
-<span class="co">#&gt; 7     g     g     7    gg</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/replace_pattern.html">replace_pattern</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="st">"a"</span>, <span class="st">'XXX-'</span>, exact <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   col_a col_b col_c col_d</span></span>
+<span><span class="co">#&gt; 1  XXX-  XXX-     1    aa</span></span>
+<span><span class="co">#&gt; 2     b     b     2    bb</span></span>
+<span><span class="co">#&gt; 3     c     c     3    cc</span></span>
+<span><span class="co">#&gt; 4     d     d     4    dd</span></span>
+<span><span class="co">#&gt; 5     e     e     5    ee</span></span>
+<span><span class="co">#&gt; 6     f     f     6    ff</span></span>
+<span><span class="co">#&gt; 7     g     g     7    gg</span></span></code></pre></div>
 </div>
-<div id="is_likert-verify-levels-of-a-factor-vector" class="section level2">
-<h2 class="hasAnchor">
-<a href="#is_likert-verify-levels-of-a-factor-vector" class="anchor"></a>is_likert(): Verify levels of a factor vector</h2>
+<div class="section level2">
+<h2 id="is_likert-verify-levels-of-a-factor-vector">is_likert(): Verify levels of a factor vector<a class="anchor" aria-label="anchor" href="#is_likert-verify-levels-of-a-factor-vector"></a>
+</h2>
 <p>Test that the levels of a factor <code>vec</code> are all to be found in the character vector <code>lev</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica")</span>
-<span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"virginica"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1] TRUE</span>
-
-<span class="co">## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica", "banana"), even though there is actually no level "banana"</span>
-<span class="co"># A message is printed</span>
-<span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"virginica"</span>, <span class="st">"banana"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; At least one element of lev is not in levels of vec</span>
-<span class="co">#&gt; [1] TRUE</span>
-
-<span class="co">## returns FALSE because the "virginica" level of iris$species is missing</span>
-<span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1] FALSE</span>
-
-<span class="co">## returns an error</span>
-<span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; Error: Elements 1 of is.character(lev) are not true</span>
-
-<span class="co">## returns no error as the numeric is coerced to a character.</span>
-<span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; At least one element of lev is not in levels of vec</span>
-<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica")</span></span>
+<span><span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"virginica"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span></span>
+<span><span class="co">## returns TRUE because all levels of iris$species are in c("setosa", "versicolor", "virginica", "banana"), even though there is actually no level "banana"</span></span>
+<span><span class="co"># A message is printed</span></span>
+<span><span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"virginica"</span>, <span class="st">"banana"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; At least one element of lev is not in levels of vec</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span></span>
+<span><span class="co">## returns FALSE because the "virginica" level of iris$species is missing</span></span>
+<span><span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"versicolor"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span>
+<span></span>
+<span><span class="co">## returns an error</span></span>
+<span><span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error: Elements 1 of is.character(lev) are not true</span></span>
+<span></span>
+<span><span class="co">## returns no error as the numeric is coerced to a character.</span></span>
+<span><span class="fu"><a href="../reference/is_likert.html">is_likert</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; At least one element of lev is not in levels of vec</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 <blockquote>
-<p>Warnings: is-likert does not test whether the levels of <code>vec</code> are a likert scale as in psychometry. See <a href="https://en.wikipedia.org/wiki/Likert_scale" class="uri">https://en.wikipedia.org/wiki/Likert_scale</a> for example.</p>
+<p>Warnings: is-likert does not test whether the levels of <code>vec</code> are a likert scale as in psychometry. See <a href="https://en.wikipedia.org/wiki/Likert_scale" class="external-link uri">https://en.wikipedia.org/wiki/Likert_scale</a> for example.</p>
 </blockquote>
 </div>
   </div>
@@ -217,13 +212,14 @@
 
 
       <footer><div class="thinkr">
-  <p>thinkr is a  <strong>ThinkR</strong> package. Learn more at <a href="https://rtask.thinkr.fr">rtask.thinkr.fr</a>.</p>
+  <p></p>
+<p>Developed by Vincent Guyader, Sébastien Rochette.</p>,<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
 <div class="author">
   <p>
-    Developed by Vincent Guyader, Sébastien Rochette.
-    Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
+    Developed by .
+    Site built by <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>.
   </p>
 </div>
 
@@ -232,6 +228,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,11 +1,11 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   Using-excel_names-functions: Using-excel_names-functions.html
   tools: tools.html
-last_built: 2021-07-16T10:50Z
+last_built: 2022-08-12T13:52Z
 urls:
-  reference: http://thinkr-open.github.io/thinkr//reference
-  article: http://thinkr-open.github.io/thinkr//articles
+  reference: http://thinkr-open.github.io/thinkr/reference
+  article: http://thinkr-open.github.io/thinkr/articles
 

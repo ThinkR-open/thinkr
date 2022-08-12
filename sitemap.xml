@@ -1,87 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//index.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/404.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/all_ggplot_to_pptx.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/as_mon_numeric.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/articles/Using-excel_names-functions.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/clean_levels.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/articles/index.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/clean_names.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/articles/tools.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/clean_vec.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/authors.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/dot-efface_test.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/index.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/dput_levels.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/all_ggplot_to_pptx.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/excel_names.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/as_mon_numeric.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/find_name.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/clean_levels.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/from_excel_to_posixt.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/clean_names.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/grapes-ni-grapes.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/clean_vec.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/gsub2.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/dot-efface_test.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/is.01.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/dput_levels.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/is.12.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/excel_names.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/is_full_figures.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/find_name.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/is_full_na.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/from_excel_to_posixt.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/is_likert.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/grapes-ni-grapes.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/look_like_a_number.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/gsub2.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/make_unique.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/index.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/peep.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/is.01.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/pipe.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/is.12.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/replace_pattern.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/is_full_figures.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/save_as_csv.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/is_full_na.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/set_col_type.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/is_likert.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//reference/thinkr-package.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/look_like_a_number.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//articles/Using-excel_names-functions.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/make_unique.html</loc>
   </url>
   <url>
-    <loc>http://thinkr-open.github.io/thinkr//articles/tools.html</loc>
+    <loc>http://thinkr-open.github.io/thinkr/reference/peep.html</loc>
+  </url>
+  <url>
+    <loc>http://thinkr-open.github.io/thinkr/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>http://thinkr-open.github.io/thinkr/reference/replace_pattern.html</loc>
+  </url>
+  <url>
+    <loc>http://thinkr-open.github.io/thinkr/reference/save_as_csv.html</loc>
+  </url>
+  <url>
+    <loc>http://thinkr-open.github.io/thinkr/reference/set_col_type.html</loc>
+  </url>
+  <url>
+    <loc>http://thinkr-open.github.io/thinkr/reference/thinkr-package.html</loc>
   </url>
 </urlset>

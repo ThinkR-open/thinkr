@@ -44,6 +44,8 @@
 -->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -56,23 +58,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">thinkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.15</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -97,7 +93,7 @@
 </div>
         </li>
         <li>
-  <a href="https://github.com/Thinkr-open/thinkr/">
+  <a href="https://github.com/Thinkr-open/thinkr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -118,7 +114,7 @@
       <h1 data-toc-skip>Functions related to Excel</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/Thinkr-open/thinkr/blob/master/vignettes/Using-excel_names-functions.Rmd"><code>vignettes/Using-excel_names-functions.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/Thinkr-open/thinkr/blob/HEAD/vignettes/Using-excel_names-functions.Rmd" class="external-link"><code>vignettes/Using-excel_names-functions.Rmd</code></a></small>
       <div class="hidden name"><code>Using-excel_names-functions.Rmd</code></div>
 
     </div>
@@ -126,10 +122,11 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr">thinkr</a></span><span class="op">)</span></code></pre></div>
-<div id="excel_names-dealing-with-column-names-and-position-number" class="section level1">
-<h1 class="hasAnchor">
-<a href="#excel_names-dealing-with-column-names-and-position-number" class="anchor"></a><code>excel_names</code> : dealing with column names and position number</h1>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/thinkr" class="external-link">thinkr</a></span><span class="op">)</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="excel_names-dealing-with-column-names-and-position-number">
+<code>excel_names</code> : dealing with column names and position number<a class="anchor" aria-label="anchor" href="#excel_names-dealing-with-column-names-and-position-number"></a>
+</h2>
 <ul>
 <li>
 <code><a href="../reference/excel_names.html">ncol_to_excel()</a></code> returns Excel column name from a position number.</li>
@@ -139,62 +136,62 @@
 <code><a href="../reference/excel_names.html">excel_col()</a></code> returns all Excel column name.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/excel_names.html">ncol_to_excel</a></span><span class="op">(</span><span class="fl">35</span><span class="op">)</span>
-<span class="co">#&gt; [1] "AI"</span>
-<span class="fu"><a href="../reference/excel_names.html">excel_to_ncol</a></span><span class="op">(</span><span class="st">"BF"</span><span class="op">)</span>
-<span class="co">#&gt; [1] 58</span>
-<span class="fu"><a href="../reference/excel_names.html">excel_col</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;   [1] "A"  "B"  "C"  "D"  "E"  "F"  "G"  "H"  "I"  "J"  "K"  "L"  "M"  "N"  "O" </span>
-<span class="co">#&gt;  [16] "P"  "Q"  "R"  "S"  "T"  "U"  "V"  "W"  "X"  "Y"  "Z"  "AA" "AB" "AC" "AD"</span>
-<span class="co">#&gt;  [31] "AE" "AF" "AG" "AH" "AI" "AJ" "AK" "AL" "AM" "AN" "AO" "AP" "AQ" "AR" "AS"</span>
-<span class="co">#&gt;  [46] "AT" "AU" "AV" "AW" "AX" "AY" "AZ" "BA" "BB" "BC" "BD" "BE" "BF" "BG" "BH"</span>
-<span class="co">#&gt;  [61] "BI" "BJ" "BK" "BL" "BM" "BN" "BO" "BP" "BQ" "BR" "BS" "BT" "BU" "BV" "BW"</span>
-<span class="co">#&gt;  [76] "BX" "BY" "BZ" "CA" "CB" "CC" "CD" "CE" "CF" "CG" "CH" "CI" "CJ" "CK" "CL"</span>
-<span class="co">#&gt;  [91] "CM" "CN" "CO" "CP" "CQ" "CR" "CS" "CT" "CU" "CV" "CW" "CX" "CY" "CZ" "DA"</span>
-<span class="co">#&gt; [106] "DB" "DC" "DD" "DE" "DF" "DG" "DH" "DI" "DJ" "DK" "DL" "DM" "DN" "DO" "DP"</span>
-<span class="co">#&gt; [121] "DQ" "DR" "DS" "DT" "DU" "DV" "DW" "DX" "DY" "DZ" "EA" "EB" "EC" "ED" "EE"</span>
-<span class="co">#&gt; [136] "EF" "EG" "EH" "EI" "EJ" "EK" "EL" "EM" "EN" "EO" "EP" "EQ" "ER" "ES" "ET"</span>
-<span class="co">#&gt; [151] "EU" "EV" "EW" "EX" "EY" "EZ" "FA" "FB" "FC" "FD" "FE" "FF" "FG" "FH" "FI"</span>
-<span class="co">#&gt; [166] "FJ" "FK" "FL" "FM" "FN" "FO" "FP" "FQ" "FR" "FS" "FT" "FU" "FV" "FW" "FX"</span>
-<span class="co">#&gt; [181] "FY" "FZ" "GA" "GB" "GC" "GD" "GE" "GF" "GG" "GH" "GI" "GJ" "GK" "GL" "GM"</span>
-<span class="co">#&gt; [196] "GN" "GO" "GP" "GQ" "GR" "GS" "GT" "GU" "GV" "GW" "GX" "GY" "GZ" "HA" "HB"</span>
-<span class="co">#&gt; [211] "HC" "HD" "HE" "HF" "HG" "HH" "HI" "HJ" "HK" "HL" "HM" "HN" "HO" "HP" "HQ"</span>
-<span class="co">#&gt; [226] "HR" "HS" "HT" "HU" "HV" "HW" "HX" "HY" "HZ" "IA" "IB" "IC" "ID" "IE" "IF"</span>
-<span class="co">#&gt; [241] "IG" "IH" "II" "IJ" "IK" "IL" "IM" "IN" "IO" "IP" "IQ" "IR" "IS" "IT" "IU"</span>
-<span class="co">#&gt; [256] "IV" "IW" "IX" "IY" "IZ" "JA" "JB" "JC" "JD" "JE" "JF" "JG" "JH" "JI" "JJ"</span>
-<span class="co">#&gt; [271] "JK" "JL" "JM" "JN" "JO" "JP" "JQ" "JR" "JS" "JT" "JU" "JV" "JW" "JX" "JY"</span>
-<span class="co">#&gt; [286] "JZ" "KA" "KB" "KC" "KD" "KE" "KF" "KG" "KH" "KI" "KJ" "KK" "KL" "KM" "KN"</span>
-<span class="co">#&gt; [301] "KO" "KP" "KQ" "KR" "KS" "KT" "KU" "KV" "KW" "KX" "KY" "KZ" "LA" "LB" "LC"</span>
-<span class="co">#&gt; [316] "LD" "LE" "LF" "LG" "LH" "LI" "LJ" "LK" "LL" "LM" "LN" "LO" "LP" "LQ" "LR"</span>
-<span class="co">#&gt; [331] "LS" "LT" "LU" "LV" "LW" "LX" "LY" "LZ" "MA" "MB" "MC" "MD" "ME" "MF" "MG"</span>
-<span class="co">#&gt; [346] "MH" "MI" "MJ" "MK" "ML" "MM" "MN" "MO" "MP" "MQ" "MR" "MS" "MT" "MU" "MV"</span>
-<span class="co">#&gt; [361] "MW" "MX" "MY" "MZ" "NA" "NB" "NC" "ND" "NE" "NF" "NG" "NH" "NI" "NJ" "NK"</span>
-<span class="co">#&gt; [376] "NL" "NM" "NN" "NO" "NP" "NQ" "NR" "NS" "NT" "NU" "NV" "NW" "NX" "NY" "NZ"</span>
-<span class="co">#&gt; [391] "OA" "OB" "OC" "OD" "OE" "OF" "OG" "OH" "OI" "OJ" "OK" "OL" "OM" "ON" "OO"</span>
-<span class="co">#&gt; [406] "OP" "OQ" "OR" "OS" "OT" "OU" "OV" "OW" "OX" "OY" "OZ" "PA" "PB" "PC" "PD"</span>
-<span class="co">#&gt; [421] "PE" "PF" "PG" "PH" "PI" "PJ" "PK" "PL" "PM" "PN" "PO" "PP" "PQ" "PR" "PS"</span>
-<span class="co">#&gt; [436] "PT" "PU" "PV" "PW" "PX" "PY" "PZ" "QA" "QB" "QC" "QD" "QE" "QF" "QG" "QH"</span>
-<span class="co">#&gt; [451] "QI" "QJ" "QK" "QL" "QM" "QN" "QO" "QP" "QQ" "QR" "QS" "QT" "QU" "QV" "QW"</span>
-<span class="co">#&gt; [466] "QX" "QY" "QZ" "RA" "RB" "RC" "RD" "RE" "RF" "RG" "RH" "RI" "RJ" "RK" "RL"</span>
-<span class="co">#&gt; [481] "RM" "RN" "RO" "RP" "RQ" "RR" "RS" "RT" "RU" "RV" "RW" "RX" "RY" "RZ" "SA"</span>
-<span class="co">#&gt; [496] "SB" "SC" "SD" "SE" "SF" "SG" "SH" "SI" "SJ" "SK" "SL" "SM" "SN" "SO" "SP"</span>
-<span class="co">#&gt; [511] "SQ" "SR" "SS" "ST" "SU" "SV" "SW" "SX" "SY" "SZ" "TA" "TB" "TC" "TD" "TE"</span>
-<span class="co">#&gt; [526] "TF" "TG" "TH" "TI" "TJ" "TK" "TL" "TM" "TN" "TO" "TP" "TQ" "TR" "TS" "TT"</span>
-<span class="co">#&gt; [541] "TU" "TV" "TW" "TX" "TY" "TZ" "UA" "UB" "UC" "UD" "UE" "UF" "UG" "UH" "UI"</span>
-<span class="co">#&gt; [556] "UJ" "UK" "UL" "UM" "UN" "UO" "UP" "UQ" "UR" "US" "UT" "UU" "UV" "UW" "UX"</span>
-<span class="co">#&gt; [571] "UY" "UZ" "VA" "VB" "VC" "VD" "VE" "VF" "VG" "VH" "VI" "VJ" "VK" "VL" "VM"</span>
-<span class="co">#&gt; [586] "VN" "VO" "VP" "VQ" "VR" "VS" "VT" "VU" "VV" "VW" "VX" "VY" "VZ" "WA" "WB"</span>
-<span class="co">#&gt; [601] "WC" "WD" "WE" "WF" "WG" "WH" "WI" "WJ" "WK" "WL" "WM" "WN" "WO" "WP" "WQ"</span>
-<span class="co">#&gt; [616] "WR" "WS" "WT" "WU" "WV" "WW" "WX" "WY" "WZ" "XA" "XB" "XC" "XD" "XE" "XF"</span>
-<span class="co">#&gt; [631] "XG" "XH" "XI" "XJ" "XK" "XL" "XM" "XN" "XO" "XP" "XQ" "XR" "XS" "XT" "XU"</span>
-<span class="co">#&gt; [646] "XV" "XW" "XX" "XY" "XZ" "YA" "YB" "YC" "YD" "YE" "YF" "YG" "YH" "YI" "YJ"</span>
-<span class="co">#&gt; [661] "YK" "YL" "YM" "YN" "YO" "YP" "YQ" "YR" "YS" "YT" "YU" "YV" "YW" "YX" "YY"</span>
-<span class="co">#&gt; [676] "YZ" "ZA" "ZB" "ZC" "ZD" "ZE" "ZF" "ZG" "ZH" "ZI" "ZJ" "ZK" "ZL" "ZM" "ZN"</span>
-<span class="co">#&gt; [691] "ZO" "ZP" "ZQ" "ZR" "ZS" "ZT" "ZU" "ZV" "ZW" "ZX" "ZY" "ZZ"</span>
-<span class="fu"><a href="../reference/excel_names.html">ncol_to_excel</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span>
-<span class="co">#&gt; [1] "A" "B" "C" "D" "E" "F"</span>
-<span class="fu"><a href="../reference/excel_names.html">excel_to_ncol</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'AF'</span>, <span class="st">'AG'</span>, <span class="st">'AH'</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1] 32 33 34</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/excel_names.html">ncol_to_excel</a></span><span class="op">(</span><span class="fl">35</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "AI"</span></span>
+<span><span class="fu"><a href="../reference/excel_names.html">excel_to_ncol</a></span><span class="op">(</span><span class="st">"BF"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 58</span></span>
+<span><span class="fu"><a href="../reference/excel_names.html">excel_col</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   [1] "A"  "B"  "C"  "D"  "E"  "F"  "G"  "H"  "I"  "J"  "K"  "L"  "M"  "N"  "O" </span></span>
+<span><span class="co">#&gt;  [16] "P"  "Q"  "R"  "S"  "T"  "U"  "V"  "W"  "X"  "Y"  "Z"  "AA" "AB" "AC" "AD"</span></span>
+<span><span class="co">#&gt;  [31] "AE" "AF" "AG" "AH" "AI" "AJ" "AK" "AL" "AM" "AN" "AO" "AP" "AQ" "AR" "AS"</span></span>
+<span><span class="co">#&gt;  [46] "AT" "AU" "AV" "AW" "AX" "AY" "AZ" "BA" "BB" "BC" "BD" "BE" "BF" "BG" "BH"</span></span>
+<span><span class="co">#&gt;  [61] "BI" "BJ" "BK" "BL" "BM" "BN" "BO" "BP" "BQ" "BR" "BS" "BT" "BU" "BV" "BW"</span></span>
+<span><span class="co">#&gt;  [76] "BX" "BY" "BZ" "CA" "CB" "CC" "CD" "CE" "CF" "CG" "CH" "CI" "CJ" "CK" "CL"</span></span>
+<span><span class="co">#&gt;  [91] "CM" "CN" "CO" "CP" "CQ" "CR" "CS" "CT" "CU" "CV" "CW" "CX" "CY" "CZ" "DA"</span></span>
+<span><span class="co">#&gt; [106] "DB" "DC" "DD" "DE" "DF" "DG" "DH" "DI" "DJ" "DK" "DL" "DM" "DN" "DO" "DP"</span></span>
+<span><span class="co">#&gt; [121] "DQ" "DR" "DS" "DT" "DU" "DV" "DW" "DX" "DY" "DZ" "EA" "EB" "EC" "ED" "EE"</span></span>
+<span><span class="co">#&gt; [136] "EF" "EG" "EH" "EI" "EJ" "EK" "EL" "EM" "EN" "EO" "EP" "EQ" "ER" "ES" "ET"</span></span>
+<span><span class="co">#&gt; [151] "EU" "EV" "EW" "EX" "EY" "EZ" "FA" "FB" "FC" "FD" "FE" "FF" "FG" "FH" "FI"</span></span>
+<span><span class="co">#&gt; [166] "FJ" "FK" "FL" "FM" "FN" "FO" "FP" "FQ" "FR" "FS" "FT" "FU" "FV" "FW" "FX"</span></span>
+<span><span class="co">#&gt; [181] "FY" "FZ" "GA" "GB" "GC" "GD" "GE" "GF" "GG" "GH" "GI" "GJ" "GK" "GL" "GM"</span></span>
+<span><span class="co">#&gt; [196] "GN" "GO" "GP" "GQ" "GR" "GS" "GT" "GU" "GV" "GW" "GX" "GY" "GZ" "HA" "HB"</span></span>
+<span><span class="co">#&gt; [211] "HC" "HD" "HE" "HF" "HG" "HH" "HI" "HJ" "HK" "HL" "HM" "HN" "HO" "HP" "HQ"</span></span>
+<span><span class="co">#&gt; [226] "HR" "HS" "HT" "HU" "HV" "HW" "HX" "HY" "HZ" "IA" "IB" "IC" "ID" "IE" "IF"</span></span>
+<span><span class="co">#&gt; [241] "IG" "IH" "II" "IJ" "IK" "IL" "IM" "IN" "IO" "IP" "IQ" "IR" "IS" "IT" "IU"</span></span>
+<span><span class="co">#&gt; [256] "IV" "IW" "IX" "IY" "IZ" "JA" "JB" "JC" "JD" "JE" "JF" "JG" "JH" "JI" "JJ"</span></span>
+<span><span class="co">#&gt; [271] "JK" "JL" "JM" "JN" "JO" "JP" "JQ" "JR" "JS" "JT" "JU" "JV" "JW" "JX" "JY"</span></span>
+<span><span class="co">#&gt; [286] "JZ" "KA" "KB" "KC" "KD" "KE" "KF" "KG" "KH" "KI" "KJ" "KK" "KL" "KM" "KN"</span></span>
+<span><span class="co">#&gt; [301] "KO" "KP" "KQ" "KR" "KS" "KT" "KU" "KV" "KW" "KX" "KY" "KZ" "LA" "LB" "LC"</span></span>
+<span><span class="co">#&gt; [316] "LD" "LE" "LF" "LG" "LH" "LI" "LJ" "LK" "LL" "LM" "LN" "LO" "LP" "LQ" "LR"</span></span>
+<span><span class="co">#&gt; [331] "LS" "LT" "LU" "LV" "LW" "LX" "LY" "LZ" "MA" "MB" "MC" "MD" "ME" "MF" "MG"</span></span>
+<span><span class="co">#&gt; [346] "MH" "MI" "MJ" "MK" "ML" "MM" "MN" "MO" "MP" "MQ" "MR" "MS" "MT" "MU" "MV"</span></span>
+<span><span class="co">#&gt; [361] "MW" "MX" "MY" "MZ" "NA" "NB" "NC" "ND" "NE" "NF" "NG" "NH" "NI" "NJ" "NK"</span></span>
+<span><span class="co">#&gt; [376] "NL" "NM" "NN" "NO" "NP" "NQ" "NR" "NS" "NT" "NU" "NV" "NW" "NX" "NY" "NZ"</span></span>
+<span><span class="co">#&gt; [391] "OA" "OB" "OC" "OD" "OE" "OF" "OG" "OH" "OI" "OJ" "OK" "OL" "OM" "ON" "OO"</span></span>
+<span><span class="co">#&gt; [406] "OP" "OQ" "OR" "OS" "OT" "OU" "OV" "OW" "OX" "OY" "OZ" "PA" "PB" "PC" "PD"</span></span>
+<span><span class="co">#&gt; [421] "PE" "PF" "PG" "PH" "PI" "PJ" "PK" "PL" "PM" "PN" "PO" "PP" "PQ" "PR" "PS"</span></span>
+<span><span class="co">#&gt; [436] "PT" "PU" "PV" "PW" "PX" "PY" "PZ" "QA" "QB" "QC" "QD" "QE" "QF" "QG" "QH"</span></span>
+<span><span class="co">#&gt; [451] "QI" "QJ" "QK" "QL" "QM" "QN" "QO" "QP" "QQ" "QR" "QS" "QT" "QU" "QV" "QW"</span></span>
+<span><span class="co">#&gt; [466] "QX" "QY" "QZ" "RA" "RB" "RC" "RD" "RE" "RF" "RG" "RH" "RI" "RJ" "RK" "RL"</span></span>
+<span><span class="co">#&gt; [481] "RM" "RN" "RO" "RP" "RQ" "RR" "RS" "RT" "RU" "RV" "RW" "RX" "RY" "RZ" "SA"</span></span>
+<span><span class="co">#&gt; [496] "SB" "SC" "SD" "SE" "SF" "SG" "SH" "SI" "SJ" "SK" "SL" "SM" "SN" "SO" "SP"</span></span>
+<span><span class="co">#&gt; [511] "SQ" "SR" "SS" "ST" "SU" "SV" "SW" "SX" "SY" "SZ" "TA" "TB" "TC" "TD" "TE"</span></span>
+<span><span class="co">#&gt; [526] "TF" "TG" "TH" "TI" "TJ" "TK" "TL" "TM" "TN" "TO" "TP" "TQ" "TR" "TS" "TT"</span></span>
+<span><span class="co">#&gt; [541] "TU" "TV" "TW" "TX" "TY" "TZ" "UA" "UB" "UC" "UD" "UE" "UF" "UG" "UH" "UI"</span></span>
+<span><span class="co">#&gt; [556] "UJ" "UK" "UL" "UM" "UN" "UO" "UP" "UQ" "UR" "US" "UT" "UU" "UV" "UW" "UX"</span></span>
+<span><span class="co">#&gt; [571] "UY" "UZ" "VA" "VB" "VC" "VD" "VE" "VF" "VG" "VH" "VI" "VJ" "VK" "VL" "VM"</span></span>
+<span><span class="co">#&gt; [586] "VN" "VO" "VP" "VQ" "VR" "VS" "VT" "VU" "VV" "VW" "VX" "VY" "VZ" "WA" "WB"</span></span>
+<span><span class="co">#&gt; [601] "WC" "WD" "WE" "WF" "WG" "WH" "WI" "WJ" "WK" "WL" "WM" "WN" "WO" "WP" "WQ"</span></span>
+<span><span class="co">#&gt; [616] "WR" "WS" "WT" "WU" "WV" "WW" "WX" "WY" "WZ" "XA" "XB" "XC" "XD" "XE" "XF"</span></span>
+<span><span class="co">#&gt; [631] "XG" "XH" "XI" "XJ" "XK" "XL" "XM" "XN" "XO" "XP" "XQ" "XR" "XS" "XT" "XU"</span></span>
+<span><span class="co">#&gt; [646] "XV" "XW" "XX" "XY" "XZ" "YA" "YB" "YC" "YD" "YE" "YF" "YG" "YH" "YI" "YJ"</span></span>
+<span><span class="co">#&gt; [661] "YK" "YL" "YM" "YN" "YO" "YP" "YQ" "YR" "YS" "YT" "YU" "YV" "YW" "YX" "YY"</span></span>
+<span><span class="co">#&gt; [676] "YZ" "ZA" "ZB" "ZC" "ZD" "ZE" "ZF" "ZG" "ZH" "ZI" "ZJ" "ZK" "ZL" "ZM" "ZN"</span></span>
+<span><span class="co">#&gt; [691] "ZO" "ZP" "ZQ" "ZR" "ZS" "ZT" "ZU" "ZV" "ZW" "ZX" "ZY" "ZZ"</span></span>
+<span><span class="fu"><a href="../reference/excel_names.html">ncol_to_excel</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "A" "B" "C" "D" "E" "F"</span></span>
+<span><span class="fu"><a href="../reference/excel_names.html">excel_to_ncol</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'AF'</span>, <span class="st">'AG'</span>, <span class="st">'AH'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 32 33 34</span></span></code></pre></div>
 </div>
   </div>
 
@@ -209,13 +206,14 @@
 
 
       <footer><div class="thinkr">
-  <p>thinkr is a  <strong>ThinkR</strong> package. Learn more at <a href="https://rtask.thinkr.fr">rtask.thinkr.fr</a>.</p>
+  <p></p>
+<p>Developed by Vincent Guyader, Sébastien Rochette.</p>,<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
 <div class="author">
   <p>
-    Developed by Vincent Guyader, Sébastien Rochette.
-    Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
+    Developed by .
+    Site built by <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>.
   </p>
 </div>
 
@@ -224,6 +222,8 @@
 
   
 
+
+  
 
   </body>
 </html>
